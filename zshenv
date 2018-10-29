@@ -49,9 +49,9 @@ alias md='mkdir -p'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias o='a -e open'
+alias qfTest="sbt/sbt 'project qfish' 'test:compile' 'test-only * -- -l \"com.qf.test.tags.IntegrationTest com.qf.test.tags.ManualTest com.qf.test.tags.IgnoreTest\"'"
 alias py='python3'
 alias rd='rmdir'
-alias runTL="sbt/sbt 'project timeline' 'run-main com.qf.timeline.TimeLineApp --env dev --signumServiceClient.host prod-signumservice-lb.mtv.quantifind.com'"
 alias s='fasd -si'
 alias sc='scalafmt -c $HOME/.scalafmt.conf'
 alias scalariform='scalariform -p=$HOME/.scalariform.properties'
