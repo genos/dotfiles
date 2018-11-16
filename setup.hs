@@ -4,10 +4,11 @@
 
 module Main where
 
-import Control.Arrow  ((***), second)
-import Turtle
-import Prelude hiding (FilePath)
-import qualified Data.Text as T
+import           Control.Arrow (second, (***))
+import           Data.Foldable (traverse_)
+import qualified Data.Text     as T
+import           Prelude       hiding (FilePath)
+import           Turtle        hiding (symlink)
 
 type FileLink = (FilePath, FilePath)
 
@@ -18,9 +19,10 @@ config :: IO FilePath
 config = (</> "config.yaml") <$> dotfiles
 
 toFL :: Text -> FileLink
-toFL = (fromText *** fromText) .
-  second (T.dropWhile ((||) <$> (== ':') <*> (== ' '))) .
-  T.break (== ':')
+toFL =
+  (fromText *** fromText)
+    . second (T.dropWhile ((||) <$> (== ':') <*> (== ' ')))
+    . T.break (== ':')
 
 fileLinks :: Text -> [FileLink]
 fileLinks = fmap toFL . T.lines
@@ -37,5 +39,5 @@ main = do
   echo "Setting up…"
   configFile <- config
   configText <- readTextFile configFile
-  mapM_ symlink $ fileLinks configText
+  traverse_ symlink $ fileLinks configText
   echo "Done!"

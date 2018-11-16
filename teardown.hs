@@ -4,9 +4,10 @@
 
 module Main where
 
-import Turtle
-import Prelude hiding (FilePath)
+import           Data.Foldable (traverse_)
 import qualified Data.Text as T
+import           Prelude   hiding (FilePath)
+import           Turtle
 
 config :: IO FilePath
 config = (</> "github/dotfiles/config.yaml") <$> home
@@ -22,5 +23,5 @@ main = do
   echo "Tearing down…"
   configFile <- config
   configText <- readTextFile configFile
-  mapM_ unlink $ links configText
+  traverse_ unlink $ links configText
   echo "Done!"
