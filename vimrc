@@ -142,12 +142,6 @@ set tags=tags;/
 "Allow vim access to system clipboard
 set clipboard=unnamed
 
-"move backup to ~/.vim-tmp
-set backup
-set swapfile
-set backupdir=~/.vim-tmp
-set directory=~/.vim-tmp
-
 "Using Ack (well, ripgrep, formerly The_Silver_Searcher)
 nnoremap <leader>a :Ack<space>
 
