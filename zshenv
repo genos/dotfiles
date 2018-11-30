@@ -1,4 +1,4 @@
-. $HOME/.zshprompt
+source $HOME/.zshprompt
 
 alias -- -='cd -'
 alias -g ......='../../../../..'
@@ -66,7 +66,6 @@ alias zz='fasd_cd -d -i'
 
 bindkey "^X^I" expand-or-complete-prefix
 
-export CARP_DIR="$HOME/github/Carp"
 export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH:$CPLUS_INCLUDE_PATH"
 export C_INCLUDE_PATH="$HOME/include:$C_INCLUDE_PATH"
 export EDITOR='nvim'
@@ -75,9 +74,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export LD_LIBRARY_PATH="$HOME/lib:$LD_LIBRARY_PATH"
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export LESS='CiMQRX'
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
 
