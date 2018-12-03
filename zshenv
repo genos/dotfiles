@@ -74,8 +74,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
-export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export LD_LIBRARY_PATH="$HOME/lib:$LD_LIBRARY_PATH"
 export LESS='CiMQRX'
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -117,7 +117,7 @@ function nix_haskell() {
     ghcver=$1
     pkgs=${*:2}
     print "Starting haskell shell, ghc = $ghcver, pkgs = $pkgs"
-    nix-shell -p "haskell.packages.$ghcver.ghcWithPackages (pkgs: with pkgs; [$pkgs])"
+    nix-shell -p "haskell.packages.$ghcver.ghcWithPackages (ps: with ps; [$pkgs])"
 	fi
 }
 function zsh_stats() {
