@@ -17,11 +17,8 @@ function brews() {
 }
 
 function rusts() {
-  ppprint "rustup update >>= reinstall cargo-clippy"
+  ppprint "rustup update"
   rustup update
-  if [ $? -ne 0 ]; then
-    cargo +nightly install --force clippy
-  fi
 }
 
 function stacks() {
