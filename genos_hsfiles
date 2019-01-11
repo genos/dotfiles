@@ -47,6 +47,6 @@ SOFTWARE.
 
 [The MIT License (MIT)]: https://opensource.org/licenses/MIT
 {-# START_FILE stack.yaml #-}
-resolver: lts-12.24
+resolver: lts-13.2
 packages:
 - .
