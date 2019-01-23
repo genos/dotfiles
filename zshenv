@@ -50,7 +50,6 @@ alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias o='a -e open'
 alias ocdb="psql 'postgresql://graham@psql-01.dev.quantifind.com:5432/opencorporates_db?sslmode=require'"
-alias ocdb_old="psql 'postgresql://graham@dev-opencorporates-entitydb0.mtv.quantifind.com:5432/opencorporates_db?sslmode=require'"
 alias py='python3'
 alias qfTest="sbt/sbt 'project qfish' 'test:compile' 'test-only * -- -l \"com.qf.test.tags.IntegrationTest com.qf.test.tags.ManualTest com.qf.test.tags.IgnoreTest\"'"
 alias rd='rmdir'
