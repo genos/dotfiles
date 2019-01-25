@@ -60,7 +60,8 @@ SOFTWARE.
 {-# START_FILE stack.yaml #-}
 resolver: lts-13.4
 packages:
-  .
+  - .
 nix:
   enable: true
   pure: true
+
