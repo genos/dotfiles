@@ -8,6 +8,7 @@ beamer_template_tex: .pandoc/templates/beamer_template.tex
 ctags: .ctags
 dups: bin/dups
 eclrc: .eclrc
+genos_hsfiles: .stack/templates/genos.hsfiles
 ghci: .ghci
 gitconfig: .gitconfig
 gvimrc: .gvimrc
