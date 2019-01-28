@@ -16,7 +16,7 @@ default-extensions:
   - OverloadedStrings
 
 dependencies:
-  - base >= 4.7 && < 5
+  - base >= 4.11 && < 5
 
 executables:
   {{name}}:
@@ -58,7 +58,7 @@ SOFTWARE.
 
 [The MIT License (MIT)]: https://opensource.org/licenses/MIT
 {-# START_FILE stack.yaml #-}
-resolver: lts-13.4
+resolver: lts-13.5
 packages:
   - .
 
