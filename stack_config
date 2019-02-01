@@ -4,8 +4,7 @@
 #
 templates:
   params:
-    author-email: graham@quantifind.com
+    author-email: graham.enos@gmail.com
     author-name: Graham Enos
-    category: Math
-    copyright: Quantifind
+    copyright: Graham Enos
     github-username: genos
