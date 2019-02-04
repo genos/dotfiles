@@ -34,7 +34,7 @@ main :: IO ()
 main = putStrLn "hello world"
 
 {-# START_FILE stack.yaml #-}
-resolver: lts-13.5
+resolver: {{resolver}}{{^resolver}}lts-13.6{{/resolver}}
 packages:
   - .
 
