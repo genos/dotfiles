@@ -20,6 +20,7 @@ nvim: .config/nvim
 passive: bin/passive
 profiles_clj: .lein/profiles.clj
 pylintrc: .pylintrc
+qf_hsfiles: .stack/templates/qf.hsfiles
 sbclrc: .sbclrc
 scalafmt_conf: .scalafmt.conf
 scalariform_properties: .scalariform.properties

@@ -3,11 +3,11 @@ name:                {{name}}
 version:             0.1.0.0
 synopsis:            TODO
 description:         TODO
-homepage:            https://github.com/{{github-username}}{{^github-username}}githubuser{{/github-username}}/{{name}}#readme
+homepage:            https://github.com/genos/{{name}}#readme
 license:             MIT
-author:              {{author-name}}{{^author-name}}Author name here{{/author-name}}
-maintainer:          {{author-email}}{{^author-email}}example@example.com{{/author-email}}
-copyright:           {{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} {{author-name}}{{^author-name}}Author name here{{/author-name}}{{/copyright}}
+author:              Graham Enos
+maintainer:          graham.enos@gmail.com
+copyright:           {{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} Graham Enos
 category:            {{category}}{{^category}}Math{{/category}}
 
 ghc-options: -Wall -O2
