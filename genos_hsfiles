@@ -7,8 +7,8 @@ homepage:            https://github.com/genos/{{name}}#readme
 license:             MIT
 author:              Graham Enos
 maintainer:          graham.enos@gmail.com
-copyright:           {{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} Graham Enos
-category:            {{category}}{{^category}}Math{{/category}}
+copyright:           {{year}}{{^year}}2019{{/year}} Graham Enos
+category:            Math
 
 ghc-options: -Wall -O2
 
