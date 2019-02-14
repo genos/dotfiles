@@ -13,7 +13,6 @@ Plug 'joom/latex-unicoder.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kristijanhusak/vim-carbon-now-sh'
-Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
@@ -142,20 +141,11 @@ set tags=tags;/
 "Allow vim access to system clipboard
 set clipboard=unnamed
 
-"Using Ack (well, ripgrep, formerly The_Silver_Searcher)
-nnoremap <leader>a :Ack<space>
-
-"Use ripgrep instead of Ack
-let g:ackprg = 'rg --vimgrep --smart-case'
-cnoreabbrev rg Ack
-cnoreabbrev rG Ack
-cnoreabbrev Rg Ack
-cnoreabbrev RG Ack
-
 "fzf speedily
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>t :Tags<CR>
 
 "Hoplon files

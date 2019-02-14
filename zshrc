@@ -12,6 +12,9 @@ fpath=(
   $fpath
 )
 typeset -U fpath
+
+source /Users/graham/.nix-profile/etc/profile.d/nix.sh
+
 path=(
   $HOME/bin
   $HOME/.local/bin
@@ -29,6 +32,7 @@ path=(
   $path
 )
 typeset -U path
+
 if [ $commands[fasd] ]; then # check if fasd is installed
   fasd_cache="$HOME/.fasd-init-cache"
   if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
@@ -44,5 +48,3 @@ source $HOME/._tmuxinator
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
-
-source /Users/graham/.nix-profile/etc/profile.d/nix.sh
