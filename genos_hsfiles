@@ -60,7 +60,4 @@ SOFTWARE.
 resolver: {{resolver}}{{^resolver}}lts-13.12{{/resolver}}
 packages:
   - .
-nix:
-  enable: true
-  packages: [llvm_6]
 
