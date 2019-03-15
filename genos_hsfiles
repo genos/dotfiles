@@ -9,7 +9,7 @@ maintainer:          graham.enos@gmail.com
 copyright:           {{year}}{{^year}}2019{{/year}} Graham Enos
 category:            Math
 
-ghc-options: -Wall -O2
+ghc-options: -Wall -O2 -fllvm
 
 default-extensions:
   - OverloadedStrings
@@ -57,7 +57,10 @@ SOFTWARE.
 
 [The MIT License (MIT)]: https://opensource.org/licenses/MIT
 {-# START_FILE stack.yaml #-}
-resolver: {{resolver}}{{^resolver}}lts-13.10{{/resolver}}
+resolver: {{resolver}}{{^resolver}}lts-13.12{{/resolver}}
 packages:
   - .
+nix:
+  enable: true
+  packages: [llvm_6]
 

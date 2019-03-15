@@ -9,7 +9,7 @@ maintainer:          graham@quantifind.com
 copyright:           {{year}}{{^year}}2019{{/year}} Quantifind
 category:            Math
 
-ghc-options: -Wall -O2
+ghc-options: -Wall -O2 -fllvm
 
 default-extensions:
   - OverloadedStrings
@@ -33,7 +33,10 @@ main :: IO ()
 main = putStrLn "hello world"
 
 {-# START_FILE stack.yaml #-}
-resolver: {{resolver}}{{^resolver}}lts-13.10{{/resolver}}
+resolver: {{resolver}}{{^resolver}}lts-13.12{{/resolver}}
 packages:
   - .
+nix:
+  enable: true
+  packages: [llvm_6]
 

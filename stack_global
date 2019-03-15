@@ -10,4 +10,3 @@ flags: {}
 extra-package-dbs: []
 packages: []
 extra-deps: []
-resolver: lts-13.10
