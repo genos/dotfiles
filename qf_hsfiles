@@ -9,7 +9,7 @@ maintainer:          graham@quantifind.com
 copyright:           {{year}}{{^year}}2019{{/year}} Quantifind
 category:            Math
 
-ghc-options: -Wall -O2 -fllvm
+ghc-options: -Wall -O2
 
 default-extensions:
   - OverloadedStrings
