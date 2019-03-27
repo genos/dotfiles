@@ -17,7 +17,8 @@ function brews() {
 }
 
 function rusts() {
-  ppprint "rustup update"
+  ppprint "rustup self update >> rustup update"
+  rustup self update
   rustup update
 }
 
