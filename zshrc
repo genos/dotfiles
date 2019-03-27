@@ -48,6 +48,3 @@ source $HOME/._tmuxinator
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
-
-# opam configuration
-test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
