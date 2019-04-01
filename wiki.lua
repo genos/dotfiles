@@ -121,11 +121,11 @@ end
 
 function CaptionedImage(src, s, tit)
 	image_index = image_index + 1
-	return "!" .. escape(src, true) .. "!\n" .. 'FIGURE ' .. image_index .. ". " .. tit .. "\n"
+	return "!" .. escape(src, true) .. "|thumbnail!\n" .. 'FIGURE ' .. image_index .. ". " .. tit .. "\n"
 end
 
 function Image(s, src, tit)
-   return "!" .. escape(src,true) .. "!"
+   return "!" .. escape(src,true) .. "|thumbnail!"
 end
 
 -- lev is an integer, the header level.
