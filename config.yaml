@@ -1,7 +1,7 @@
 _cargo: site-functions/_cargo
 _rustup: site-functions/_rustup
 _stack: site-functions/_stack
-◊start_your_day: bin/◊start_your_day
+START_YOUR_DAY: bin/START_YOUR_DAY
 _tmuxinator: ._tmuxinator
 astylerc: .astylerc
 beamer_template_tex: .pandoc/templates/beamer_template.tex
