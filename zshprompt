@@ -1,13 +1,13 @@
 # This started with help from https://github.com/tylerreckart/hyperzsh,
 # http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt, &
-# oh-my-zsh's awesomepanda, but have largely diverged
+# oh-my-zsh's awesomepanda, but has largely diverged
 #
 . $HOME/github/dotfiles/spectrum.zsh
 
 PROMPT='$(_dir) $(_glyph) '
 RPROMPT='$(_git_status) $(_git_branch)'
 
-function _glyph() { print "%{$fg[green]%}⇒%{$reset_color%}" }
+function _glyph() { print "%{$fg[green]%}∃%{$reset_color%}" }
 
 function _dir() { print "%{$fg[cyan]%}${PWD/#$HOME/~}%{$reset_color%}" }
 
