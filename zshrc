@@ -18,7 +18,7 @@ source /Users/graham/.nix-profile/etc/profile.d/nix.sh
 path=(
   $HOME/bin
   $HOME/.local/bin
-  /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
+  /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin

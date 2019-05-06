@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'bhurlow/vim-parinfer'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
+Plug 'hwayne/tla.vim'
 Plug 'jgdavey/tslime.vim'
 Plug 'joom/latex-unicoder.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
