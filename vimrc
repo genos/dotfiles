@@ -22,17 +22,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vmchale/dhall-vim', { 'for': 'dhall' }
-
-"deoplete
-if has ('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-end
-let g:deoplete#enable_at_startup = 1
-
 call plug#end()
 
 "Turn on stuff
