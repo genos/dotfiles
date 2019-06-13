@@ -1,4 +1,5 @@
 "Security exploits?
+set nomodeline
 set modelines=0
 
 if !has('nvim')
