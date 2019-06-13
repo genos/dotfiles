@@ -1,3 +1,6 @@
+"Security exploits?
+set modelines=0
+
 if !has('nvim')
   set nocompatible               " be iMproved
 endif
@@ -30,17 +33,15 @@ syntax on
 
 set laststatus=2  " always
 
-"Security exploits?
-set modelines=0
-
 "Python providers
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 "Explicitly set clipboard (speeds things up by skipping system call)
-let g:clipboard = { 'name': 'pbcopy', 'copy': { '+': 'pbcopy', '*': 'pbcopy', }, 'paste': {'+': 'pbpaste', '*': 'pbpaste',  },
-  \ 'cache_enabled': 0,
-  \ }
+let g:clipboard = { 'name': 'pbcopy',
+                  \ 'copy': { '+': 'pbcopy', '*': 'pbcopy' },
+                  \ 'paste': {'+': 'pbpaste', '*': 'pbpaste' },
+                  \ 'cache_enabled': 0 }
 
 "Colors & highlighting
 set t_Co=256

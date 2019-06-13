@@ -59,6 +59,7 @@ alias scalariform='scalariform -p=$HOME/.scalariform.properties'
 alias sd='fasd -sid'
 alias sf='fasd -sif'
 alias ssh='TERM=xterm-256color ssh'
+alias sp_dcteam="psql 'postgresql://graham@pg06-21.mtv.quantifind.com:5432/sp_dcteam'"
 alias touch='nocorrect touch'
 alias v='f -e $EDITOR'
 alias whihc='which'
