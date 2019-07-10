@@ -12,13 +12,11 @@ Plug 'bhurlow/vim-parinfer'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'hwayne/tla.vim'
 Plug 'jgdavey/tslime.vim'
 Plug 'joom/latex-unicoder.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'runoshun/vim-alloy', { 'for': 'alloy' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -146,7 +144,6 @@ vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
 
-
 "Move up the directory hierarchy until you find a tags file
 set tags=tags;/
 
@@ -159,6 +156,3 @@ nnoremap <leader>g :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>t :Tags<CR>
-
-"Hoplon files
-au BufRead,BufNewFile *.hl setfiletype clojure
