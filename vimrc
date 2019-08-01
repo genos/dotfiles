@@ -8,8 +8,8 @@ endif
 
 "Plugin time: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'bhurlow/vim-parinfer'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'eraserhd/parinfer-rust'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'jgdavey/tslime.vim'
