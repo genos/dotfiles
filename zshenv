@@ -18,7 +18,7 @@ alias a='fasd -a'
 alias cadt='cat'
 alias cp='nocorrect cp'
 alias d='fasd -d'
-alias e='nvim'
+alias e='$EDITOR'
 alias f='fasd -f'
 alias g='git'
 alias ga='git add'
@@ -36,8 +36,8 @@ alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias gst='git status'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias history='fc -il 1'
-alias ip='jupyter-console'
-alias ipn='jupyter-notebook'
+alias ip='ipython'
+alias ipn='jupyter notebook'
 alias jc='$HOME/j64-805/bin/jconsole'
 alias jqt='$HOME/j64-805/bin/jqt.command'
 alias l='ls -al'
@@ -59,6 +59,7 @@ alias scalariform='scalariform -p=$HOME/.scalariform.properties'
 alias sd='fasd -sid'
 alias sf='fasd -sif'
 alias ssh='TERM=xterm-256color ssh'
+alias spdb="psql 'postgresql://graham@dev-entitydb.mtv.quantifind.com:5432/sp_db'"
 alias sp_dcteam="psql 'postgresql://graham@pg06-21.mtv.quantifind.com:5432/sp_dcteam'"
 alias touch='nocorrect touch'
 alias v='f -e $EDITOR'
@@ -70,7 +71,7 @@ bindkey "^X^I" expand-or-complete-prefix
 
 export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH:$CPLUS_INCLUDE_PATH"
 export C_INCLUDE_PATH="$HOME/include:$C_INCLUDE_PATH"
-export EDITOR='nvim'
+export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='rg --color never -g "" --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
