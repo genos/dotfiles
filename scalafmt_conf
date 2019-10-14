@@ -5,3 +5,4 @@ continuationIndent.defnSite = 2
 danglingParentheses = true
 newlines.sometimesBeforeColonInMethodReturnType = true
 rewrite.rules = [SortImports]
+maxColumn = 125
