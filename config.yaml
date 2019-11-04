@@ -5,6 +5,7 @@ START_YOUR_DAY: bin/START_YOUR_DAY
 _tmuxinator: ._tmuxinator
 astylerc: .astylerc
 beamer_template_tex: .pandoc/templates/beamer_template.tex
+beamer_dark_template_tex: .pandoc/templates/beamer_dark_template.tex
 ctags: .ctags
 dups: bin/dups
 eclrc: .eclrc

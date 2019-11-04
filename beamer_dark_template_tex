@@ -1,0 +1,116 @@
+\documentclass{beamer}
+
+% typography
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{fontspec}
+\setmonofont{Triplicate T4c}
+\usepackage{microtype}
+
+% colors
+\usepackage{color}
+\definecolor{BG}{RGB}{50, 50, 50}
+\definecolor{FG}{RGB}{237, 237, 237}
+% http://colorbrewer2.org/#type=diverging&scheme=Spectral&n=11
+\definecolor{Red}{RGB}{213, 62, 79}
+\definecolor{Orange}{RGB}{253, 174, 97}
+\definecolor{Green}{RGB}{102, 194, 165}
+\definecolor{Blue}{RGB}{50, 136, 189}
+\definecolor{Purple}{RGB}{94, 79, 162}
+\setbeamercolor{alerted text}{fg=Red, bg=BG}
+\setbeamercolor{title}{fg=FG, bg=BG}
+\setbeamercolor{titlelike}{fg=FG, bg=BG}
+\setbeamercolor{normal text}{fg=FG, bg=BG}
+\setbeamercolor{block title}{fg=FG, bg=BG}
+\setbeamercolor{block body}{fg=FG, bg=BG}
+\setbeamercolor{item}{fg=FG, bg=BG}
+\setbeamercolor{title}{fg=FG, bg=BG}
+
+% other packages
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{cleveref}
+\usepackage{fancyvrb}
+    \fvset{fontsize=\normalsize}
+\usepackage{graphicx}
+\makeatletter
+\def\ScaleWidthIfNeeded{%
+ \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\def\ScaleHeightIfNeeded{%
+  \ifdim\Gin@nat@height>0.75\textheight
+    0.75\textheight
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+    \setkeys{Gin}{width=\ScaleWidthIfNeeded,
+                  totalheight=\ScaleHeightIfNeeded,
+                  keepaspectratio}
+\usepackage{listings}
+    \lstset{basicstyle=\footnotesize\ttfamily,
+            upquote=true,
+            showstringspaces=false,
+            commentstyle=\color{Green},
+            keywordstyle=\color{Blue}}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\usepackage{units}
+\usepackage{xspace}
+
+$if(header-includes)$
+% other includes
+$header-includes$
+$endif$
+
+% suppress navigation bar
+\beamertemplatenavigationsymbolsempty
+% suppress caption label (e.g. "Figure", "Table", etc.)
+\setbeamertemplate{caption}{\insertcaption}
+
+% pandoc workarounds
+\def\tightlist{}
+\newcommand{\passthrough}[1]{#1}
+
+% set itemize symbol
+\mode<presentation> {
+    \setbeamercovered{transparent}
+    \setbeamertemplate{items}[circle]
+}
+
+$if(title)$
+\title{$title$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+
+$if(title)$
+\begin{frame}
+\titlepage
+\end{frame}
+$endif$
+
+$if(abstract)$
+\begin{frame}
+$abstract$
+\end{frame}
+$endif$
+
+$body$
+
+\end{document}

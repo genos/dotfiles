@@ -114,7 +114,7 @@ function nix_haskell() {
   # http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
   if [[ $# -lt 2 ]];
   then
-    print "Must provide a ghc version (e.g ghc821) and at least one package"
+    print "Must provide a ghc version (e.g ghc881) and at least one package"
     return 1;
   else
     ghcver=$1
