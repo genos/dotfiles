@@ -1,8 +1,9 @@
+START_YOUR_DAY: bin/START_YOUR_DAY
 _cargo: site-functions/_cargo
 _rustup: site-functions/_rustup
 _stack: site-functions/_stack
-START_YOUR_DAY: bin/START_YOUR_DAY
 _tmuxinator: ._tmuxinator
+aoc_hsfiles: .stack/templates/aoc.hsfiles
 astylerc: .astylerc
 beamer_template_tex: .pandoc/templates/beamer_template.tex
 beamer_dark_template_tex: .pandoc/templates/beamer_dark_template.tex
