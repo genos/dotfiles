@@ -18,12 +18,12 @@ function _git_branch() {
 
 function _git_status() {
   local index STATUS
-  local added="%{$fg[green]%}○%{$reset_color%}"
-  local deleted="%{$fg[red]%}○%{$reset_color%}"
-  local modified="%{$fg[yellow]%}○%{$reset_color%}"
-  local renamed="%{$fg[blue]%}○%{$reset_color%}"
-  local unmerged="%{$fg[cyan]%}○%{$reset_color%}"
-  local untracked="%{$fg[white]%}○%{$reset_color%}"
+  local added="%{$fg[green]%}●%{$reset_color%}"
+  local deleted="%{$fg[red]%}●%{$reset_color%}"
+  local modified="%{$fg[yellow]%}●%{$reset_color%}"
+  local renamed="%{$fg[blue]%}●%{$reset_color%}"
+  local unmerged="%{$fg[cyan]%}●%{$reset_color%}"
+  local untracked="%{$fg[white]%}●%{$reset_color%}"
   local lines=(
   "${(@f)$(git status --porcelain --ignore-submodules=dirty 2> /dev/null)}"
   )
