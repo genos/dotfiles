@@ -8,4 +8,4 @@ templates:
     author-name: Graham Enos
     copyright: Graham Enos
     github-username: genos
-    resolver: lts-14.17
+    resolver: lts-14.19
