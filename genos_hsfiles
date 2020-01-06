@@ -50,7 +50,7 @@ SOFTWARE.
 
 [The MIT License (MIT)]: https://opensource.org/licenses/MIT
 {-# START_FILE stack.yaml #-}
-resolver: {{resolver}}{{^resolver}}lts-14.19{{/resolver}}
+resolver: {{resolver}}{{^resolver}}lts-14.20{{/resolver}}
 packages:
   - .
 
