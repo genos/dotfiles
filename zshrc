@@ -28,6 +28,7 @@ path=(
   /Library/TeX/Distributions/Programs/texbin
   $HOME/.cargo/bin
   $GOPATH/bin
+  /usr/local/opt/python@3/bin
   /usr/local/opt/python@2/bin
   $path
 )
