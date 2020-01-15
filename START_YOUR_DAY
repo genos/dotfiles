@@ -27,6 +27,11 @@ function stacks() {
   stack update
 }
 
+function cabals() {
+  ppprint "cabal update…"
+  cabal update
+}
+
 # Don't include for now, may break current working python stuff
 function pips() {
   ppprint "pip3 update >> pip_pypy3 update…"
@@ -37,4 +42,4 @@ function pips() {
   done
 }
 
-repos; brews; rusts; stacks; ppppprint "DONE!"
+repos; brews; rusts; stacks; cabals; ppppprint "DONE!"
