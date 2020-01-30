@@ -6,7 +6,3 @@ set lines=24 columns=90
 
 "Font
 set guifont=Triplicate\ T3c:h13
-
-"Color
-colorscheme molokai
-highlight LineNr ctermfg=DarkGrey

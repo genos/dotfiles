@@ -19,7 +19,6 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
@@ -46,9 +45,8 @@ let g:clipboard = { 'name': 'pbcopy',
 
 "Colors & highlighting
 set t_Co=256
-set background=dark
 highlight LineNr ctermfg=DarkGrey
-highlight Comment cterm=italic
+highlight Comment cterm=italic gui=italic
 
 "Set encoding to utf-8
 set enc=utf-8
