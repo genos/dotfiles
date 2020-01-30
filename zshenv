@@ -71,6 +71,7 @@ bindkey "^X^I" expand-or-complete-prefix
 
 export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH:$CPLUS_INCLUDE_PATH"
 export C_INCLUDE_PATH="$HOME/include:$C_INCLUDE_PATH"
+export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-10.2/lib/${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}"
 export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='rg --color never -g "" --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

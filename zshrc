@@ -27,9 +27,10 @@ path=(
   /sbin
   /Library/TeX/Distributions/Programs/texbin
   $HOME/.cargo/bin
-  $GOPATH/bin
+  /Developer/NVIDIA/CUDA-10.2/bin
   /usr/local/opt/python@3/bin
   /usr/local/opt/python@2/bin
+  $GOPATH/bin
   $path
 )
 typeset -U path
