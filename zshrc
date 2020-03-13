@@ -1,3 +1,4 @@
+source ~/.zshenv
 source ~/SOURCE_ME
 autoload -U colors && colors
 autoload -Uz compinit
