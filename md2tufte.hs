@@ -1,11 +1,17 @@
 #!/usr/bin/env stack
--- stack --install-ghc runghc --package turtle
+{- stack script
+ --compile
+ --resolver lts-15.3
+ --install-ghc
+ --package "text turtle"
+ --ghc-options -Wall
+-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 
-import Turtle
 import Prelude hiding (FilePath)
+import Turtle  hiding (input)
 
 md2pdf :: FilePath -> FilePath
 md2pdf = (<.> "pdf") . dropExtension

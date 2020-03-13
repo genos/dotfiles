@@ -1,13 +1,19 @@
 #!/usr/bin/env stack
--- stack --install-ghc runghc --package turtle
+{- stack script
+ --compile
+ --resolver lts-15.3
+ --install-ghc
+ --package "text turtle"
+ --ghc-options -Wall
+-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 
 import           Data.Foldable (traverse_)
-import qualified Data.Text as T
-import           Prelude   hiding (FilePath)
-import           Turtle
+import qualified Data.Text     as T
+import           Prelude       hiding (FilePath)
+import           Turtle        hiding (f)
 
 config :: IO FilePath
 config = (</> "github/dotfiles/config.yaml") <$> home

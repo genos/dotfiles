@@ -1,14 +1,20 @@
 #!/usr/bin/env stack
--- stack --install-ghc runghc --package turtle
+{- stack script
+ --compile
+ --resolver lts-15.3
+ --install-ghc
+ --package "text turtle"
+ --ghc-options -Wall
+-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 
-import           Control.Arrow (second, (***))
-import           Data.Foldable (traverse_)
-import qualified Data.Text     as T
-import           Prelude       hiding (FilePath)
-import           Turtle        hiding (symlink)
+import           Data.Bifunctor (second, bimap)
+import           Data.Foldable  (traverse_)
+import qualified Data.Text      as T
+import           Prelude        hiding (FilePath)
+import           Turtle         hiding (d, proc, symlink)
 
 type FileLink = (FilePath, FilePath)
 
@@ -20,7 +26,7 @@ config = (</> "config.yaml") <$> dotfiles
 
 toFL :: Text -> FileLink
 toFL =
-  (fromText *** fromText)
+  bimap fromText fromText
     . second (T.dropWhile ((||) <$> (== ':') <*> (== ' ')))
     . T.break (== ':')
 
@@ -31,8 +37,8 @@ symlink :: FileLink -> IO ()
 symlink (file, link) = do
   h <- home
   d <- dotfiles
-  procs "ln" ["-s", f (d </> file), f (h </> link)] empty
-  where f = either (error . T.unpack) id . toText
+  procs "ln" ["-s", proc (d </> file), proc (h </> link)] empty
+  where proc = either (error . T.unpack) id . toText
 
 main :: IO ()
 main = do
