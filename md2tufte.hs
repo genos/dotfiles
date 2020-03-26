@@ -1,7 +1,7 @@
 #!/usr/bin/env stack
 {- stack script
  --compile
- --resolver lts-15.3
+ --resolver lts-15.5
  --install-ghc
  --package "text turtle"
  --ghc-options -Wall
