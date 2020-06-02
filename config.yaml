@@ -33,7 +33,6 @@ tmux_conf: .tmux.conf
 tufte_template_tex: .pandoc/templates/tufte_template.tex
 vim: .vim
 vimrc: .vimrc
-wiki.lua: .pandoc/wiki.lua
 weasel: bin/weasel
 zshenv: .zshenv
 zshprompt: .zshprompt
