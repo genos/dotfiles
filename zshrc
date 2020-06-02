@@ -30,6 +30,7 @@ path=(
   $HOME/.cargo/bin
   /usr/local/opt/python@3/bin
   $GOPATH/bin
+  $HOME/.poetry/bin
   $path
 )
 typeset -U path
