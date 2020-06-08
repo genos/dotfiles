@@ -47,6 +47,4 @@ source $HOME/._tmuxinator
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
