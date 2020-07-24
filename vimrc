@@ -13,7 +13,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'jgdavey/tslime.vim'
+Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
