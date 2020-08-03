@@ -5,6 +5,7 @@ _stack: site-functions/_stack
 _tmuxinator: ._tmuxinator
 aoc_hsfiles: .stack/templates/aoc.hsfiles
 astylerc: .astylerc
+bat: .config/bat/config
 beamer_template_tex: .pandoc/templates/beamer_template.tex
 beamer_dark_template_tex: .pandoc/templates/beamer_dark_template.tex
 ctags: .ctags
