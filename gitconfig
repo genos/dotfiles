@@ -8,7 +8,6 @@
 	co = checkout
 	rom = rebase origin/master
 	romi = rebase -i --autosquash origin/master
-	new = !git init && git symbolic-ref HEAD refs/heads/main
 [color]
 	ui = auto
 [core]
