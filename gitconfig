@@ -8,6 +8,7 @@
 	co = checkout
 	rom = rebase origin/master
 	romi = rebase -i --autosquash origin/master
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 [color]
 	ui = auto
 [core]
@@ -20,3 +21,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main
