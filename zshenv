@@ -88,16 +88,21 @@ export SHELL="/usr/local/bin/zsh"
 
 
 function check_writing() {
+  # Run the plaintext-ish file through various writing checks
   if [[ -n $1 ]]; then
     weasel $1 && passive $1 && dups $1 && alex $1
   else
     print "usage: $0 <file to check>"
   fi
 }
+
 function hs() {
+  # Search history with ripgrep
   history | rg "$*"
 }
+
 function man() {
+  # pretty manpage
   env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
     LESS_TERMCAP_md="$(printf "\e[1;31m")" \
@@ -111,8 +116,10 @@ function man() {
     PATH="$HOME/bin:$PATH" \
     man "$@"
 }
+
 function nix_haskell() {
-  # http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
+  # Open up a nix environment with a specified GHC version and package
+  # - http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
   if [[ $# -lt 2 ]];
   then
     print "Must provide a ghc version (e.g ghc881) and at least one package"
@@ -124,7 +131,9 @@ function nix_haskell() {
     nix-shell -p "haskell.packages.$ghcver.ghcWithPackages (ps: with ps; [$pkgs])"
 	fi
 }
+
 function zsh_stats() {
+  # Get a breakdown of most common zsh commands
   fc -l 1 | \
     awk '{CMD[$2]++;count++;}END{for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | \
     rg -v "./" | \
@@ -156,7 +165,6 @@ setopt hist_ignore_space
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
-setopt prompt_subst
 
 zstyle ':completion:*' list-colors "${(s.:.)LSCOLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

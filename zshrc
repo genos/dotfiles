@@ -1,8 +1,8 @@
-source ~/.zshenv
-source ~/SOURCE_ME
-autoload -U colors && colors
+source $HOME/.zshenv
+source $HOME/SOURCE_ME
+
 autoload -Uz compinit
-if [[  (-e ~/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump)) ]]; then
+if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
 else
   compinit -C
@@ -13,8 +13,6 @@ fpath=(
   $fpath
 )
 typeset -U fpath
-
-source /Users/graham/.nix-profile/etc/profile.d/nix.sh
 
 path=(
   $HOME/bin
@@ -35,6 +33,8 @@ path=(
 )
 typeset -U path
 
+[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+
 if [ $commands[fasd] ]; then # check if fasd is installed
   fasd_cache="$HOME/.fasd-init-cache"
   if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
@@ -43,9 +43,10 @@ if [ $commands[fasd] ]; then # check if fasd is installed
   source "$fasd_cache"
   unset fasd_cache
 fi
+
 source $HOME/._tmuxinator
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
