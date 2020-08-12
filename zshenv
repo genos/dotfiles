@@ -1,5 +1,3 @@
-source $HOME/.zshprompt
-
 alias -- -='cd -'
 alias -g ......='../../../../..'
 alias -g .....='../../../..'

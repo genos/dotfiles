@@ -1,3 +1,4 @@
+source $HOME/.zshprompt
 source $HOME/.zshenv
 source $HOME/SOURCE_ME
 
