@@ -1,5 +1,5 @@
-source $HOME/.zshprompt
 source $HOME/.zshenv
+source $HOME/.zshprompt
 source $HOME/SOURCE_ME
 
 autoload -Uz compinit
@@ -9,6 +9,7 @@ else
   compinit -C
 fi
 bindkey -v
+
 fpath=(
   $HOME/site-functions
   $fpath
