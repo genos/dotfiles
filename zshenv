@@ -46,7 +46,6 @@ alias md='mkdir -p'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias o='a -e open'
-alias ocdb="psql 'postgresql://graham@pg06-21.mtv.quantifind.com:5432/opencorporates_db'"
 alias py='python3'
 alias qfTest="sbt/sbt 'project qfish' 'test:compile' 'test-only * -- -l \"com.qf.test.tags.IntegrationTest com.qf.test.tags.ManualTest com.qf.test.tags.IgnoreTest\"'"
 alias rd='rmdir'
@@ -56,8 +55,6 @@ alias scalariform='scalariform -p=$HOME/.scalariform.properties'
 alias sd='fasd -sid'
 alias sf='fasd -sif'
 alias ssh='TERM=xterm-256color ssh'
-alias spdb="psql 'postgresql://graham@dev-entitydb.mtv.quantifind.com:5432/sp_db'"
-alias sp_dcteam="psql 'postgresql://graham@pg06-21.mtv.quantifind.com:5432/sp_dcteam'"
 alias touch='nocorrect touch'
 alias v='f -e $EDITOR'
 alias whihc='which'
