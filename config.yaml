@@ -20,6 +20,7 @@ inputrc: .inputrc
 md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
 nvim: .config/nvim
+ocamlinit: .ocamlinit
 passive: bin/passive
 profiles_clj: .lein/profiles.clj
 pylintrc: .pylintrc
