@@ -8,7 +8,6 @@ endif
 
 "Plugin time: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'dpwright/vim-tup'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -18,10 +17,8 @@ Plug 'joom/latex-unicoder.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'ollykel/v-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -112,7 +109,7 @@ let mapleader = ","
 "Quickly get out of searches
 nnoremap <leader><space> :noh<cr>
 
-"Whip you into Vim shape!
+"Whip you into Vim shape! (disable arrow buttons)
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
