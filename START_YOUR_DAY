@@ -13,7 +13,7 @@ function repos() {
 
 function brews() {
   ppprint "brew update >>= upgrade >>= cask upgrade >>= cleanup…"
-  brew update && brew upgrade && brew cask upgrade && brew cleanup
+  brew update && brew upgrade && brew upgrade --cask && brew cleanup
 }
 
 function rusts() {
