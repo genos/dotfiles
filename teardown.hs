@@ -1,11 +1,6 @@
-#!/usr/bin/env stack
-{- stack script
- --compile
- --resolver lts-16.1
- --install-ghc
- --package "text turtle"
- --ghc-options -Wall
--}
+#!/usr/bin/env nix-shell
+#! nix-shell --pure -i runghc -p "haskellPackages.ghcWithPackages (ps: with ps; [text turtle])"
+#! nix-shell -I https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
