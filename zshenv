@@ -114,15 +114,15 @@ function man() {
 function nix_haskell() {
   # Open up a nix environment with a specified GHC version and package
   # - http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
-  if [[ $# -lt 2 ]];
+  # - https://nixos.org/manual/nixpkgs/stable/#haskell
+  pkgs=$@
+  if [[ $# -gt 0 ]];
   then
-    print "Must provide a ghc version (e.g ghc881) and at least one package"
-    return 1;
+    print "Starting haskell shell, pkgs = $pkgs"
+    nix-shell --pure -p "haskellPackages.ghcWithPackages (ps: with ps; [$pkgs])"
   else
-    ghcver=$1
-    pkgs=${*:2}
-    print "Starting haskell shell, ghc = $ghcver, pkgs = $pkgs"
-    nix-shell -p "haskell.packages.$ghcver.ghcWithPackages (ps: with ps; [$pkgs])"
+    print "Starting haskell shell"
+    nix-shell --pure -p "haskellPackages.ghc"
 	fi
 }
 
