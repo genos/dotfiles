@@ -32,6 +32,14 @@
 \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
 \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
 \usepackage{longtable}
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+  {\par}
+$endif$
 
 % citations
 \newcommand{\ct}[1]{\footnote{\citet{#1}}}
