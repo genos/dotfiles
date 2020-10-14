@@ -29,7 +29,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
-set laststatus=2  " always
+set laststatus=2  " always have a status line
 
 "Python providers
 let g:python_host_prog = '/usr/local/bin/python'
