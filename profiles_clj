@@ -1,7 +1,0 @@
-{:user {:plugins [[com.jakemccrary/lein-test-refresh "0.24.1"]
-                  [lein-bikeshed                     "0.5.2"]
-                  [lein-cljfmt                       "0.6.6"]
-                  [lein-kibit                        "0.1.8"]
-                  [venantius/pyro                    "0.1.2"]
-                  [venantius/ultra                   "0.6.0"]
-                  [venantius/yagni                   "0.1.7"]]}}

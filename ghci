@@ -4,5 +4,3 @@
 :set +t
 :def hlint const . return $ ":! hlint \"src\""
 :def hoogle \s -> return $ ":! hoogle --count=17 \"" ++ s ++ "\""
-:def pfree \s -> return $ ":! pointfree \"" ++ s ++ "\""
-:def pfull \s -> return $ ":! pointful \"" ++ s ++ "\""

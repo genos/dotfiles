@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell --pure -i runghc -p "haskellPackages.ghcWithPackages (ps: with ps; [text turtle])"
+#! nix-shell --pure -i runghc -p "haskellPackages.ghcWithPackages (ps: [ps.text ps.turtle])"
 #! nix-shell -I https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz
 {-# LANGUAGE OverloadedStrings #-}
 

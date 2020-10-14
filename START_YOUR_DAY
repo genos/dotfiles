@@ -22,11 +22,6 @@ function rusts() {
   rustup update
 }
 
-function stacks() {
-  ppprint "stack update…"
-  stack update
-}
-
 function cabals() {
   ppprint "cabal update…"
   cabal update
@@ -42,4 +37,4 @@ function pips() {
   done
 }
 
-repos; brews; rusts; stacks; cabals; ppppprint "DONE!"
+repos; brews; rusts; cabals; ppppprint "DONE!"
