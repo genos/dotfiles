@@ -9,6 +9,7 @@ endif
 "Plugin time: https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
