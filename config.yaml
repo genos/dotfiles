@@ -4,7 +4,6 @@ astylerc: .astylerc
 bat: .config/bat/config
 beamer_template_tex: .pandoc/templates/beamer_template.tex
 beamer_dark_template_tex: .pandoc/templates/beamer_dark_template.tex
-ctags: .ctags
 dups: bin/dups
 ghci: .ghci
 gitconfig: .gitconfig
@@ -18,7 +17,6 @@ passive: bin/passive
 pylintrc: .pylintrc
 sbclrc: .sbclrc
 scalafmt_conf: .scalafmt.conf
-scalariform_properties: .scalariform.properties
 stylish_haskell: .stylish-haskell.yaml
 tmux_conf: .tmux.conf
 tufte_template_tex: .pandoc/templates/tufte_template.tex

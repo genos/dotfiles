@@ -3,15 +3,6 @@ alias -g ......='../../../../..'
 alias -g .....='../../../..'
 alias -g ....='../../..'
 alias -g ...='../..'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
 alias a='fasd -a'
 alias cadt='cat'
 alias cp='nocorrect cp'
@@ -35,8 +26,6 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias history='fc -il 1'
 alias ip='ipython'
 alias ipn='jupyter notebook'
-alias jc='$HOME/j901/bin/jconsole'
-alias jqt='$HOME/j64-805/bin/jqt.command'
 alias l='exa --git --header --long'
 alias la='exa --all --git --header --long'
 alias ln='nocorrect ln'
@@ -51,7 +40,6 @@ alias qfTest="sbt/sbt 'project qfish' 'test:compile' 'test-only * -- -l \"com.qf
 alias rd='rmdir'
 alias s='fasd -si'
 alias sc='scalafmt -c $HOME/.scalafmt.conf'
-alias scalariform='scalariform -p=$HOME/.scalariform.properties'
 alias sd='fasd -sid'
 alias sf='fasd -sif'
 alias ssh='TERM=xterm-256color ssh'
@@ -63,9 +51,8 @@ alias zz='fasd_cd -d -i'
 
 bindkey "^X^I" expand-or-complete-prefix
 
-export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH:$CPLUS_INCLUDE_PATH"
 export C_INCLUDE_PATH="$HOME/include:$C_INCLUDE_PATH"
-export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-10.2/lib/${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}"
+export CPLUS_INCLUDE_PATH="$C_INCLUDE_PATH:$CPLUS_INCLUDE_PATH"
 export EDITOR='vim'
 export FZF_DEFAULT_COMMAND='rg --color never -g "" --files'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -112,7 +99,7 @@ function man() {
 }
 
 function nix_haskell() {
-  # Open up a nix environment with a specified GHC version and package
+  # Open up a nix environment with optional packages
   # - http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
   # - https://nixos.org/manual/nixpkgs/stable/#haskell
   pkgs=$@
