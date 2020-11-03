@@ -16,7 +16,6 @@ nvim: .config/nvim
 passive: bin/passive
 pylintrc: .pylintrc
 sbclrc: .sbclrc
-scalafmt_conf: .scalafmt.conf
 stylish_haskell: .stylish-haskell.yaml
 tmux_conf: .tmux.conf
 tufte_template_tex: .pandoc/templates/tufte_template.tex

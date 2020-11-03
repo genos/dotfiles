@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
+"""Uninstall my dotfiles"""
 
 import os
 from pathlib import Path
 
-CONFIG = Path.home() / Path("github/dotfiles/config.yaml")
+CONFIG = Path(__file__).parent / Path("config.yaml")
+
 
 def process(line: str) -> None:
-    symlink = line.split(": ")[1]
-    os.unlink(str(Path.home() / symlink))
+    """Remove all symlinks listed in the CONFIG"""
+    os.unlink(str(Path.home() / line.split(": ")[1]))
 
 
 if __name__ == "__main__":
-    for line in CONFIG.read_text().split("\n"):
-        if line:
+    for LINE in CONFIG.read_text().split("\n"):
+        if LINE:
             try:
-                process(line)
+                process(LINE)
             except FileNotFoundError:
                 pass
     print("Done!")

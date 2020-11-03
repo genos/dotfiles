@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""Convert a markdown file to LaTeX & typeset it"""
+
+import argparse
+from pathlib import Path
+import shlex
+import subprocess
+
+
+def typeset(path: Path) -> None:
+    """Convert a markdown file to LaTeX & typeset it"""
+    output = path.rename(path.with_suffix(".pdf"))
+    return subprocess.call(
+        shlex.split(
+            f"pandoc -t latex+smart --pdf-engine=xelatex --data-dir=$HOME/.pandoc --template=tufte_template.tex --listings {path} -o {output}"
+        )
+    )
+
+
+if __name__ == "__main__":
+    PARSER = argparse.ArgumentParser(description=__doc__)
+    PARSER.add_argument(
+        "-i", "--input", help="Markdown file to convert & typeset", required=True
+    )
+    typeset(Path(PARSER.parse_args().input))

@@ -1,7 +1,0 @@
-align.openParenCallSite = false
-align.openParenDefSite = false
-align.tokens = [{code = "=>", owner = "Case"}]
-align = more
-continuationIndent.defnSite = 2
-rewrite.rules = [RedundantBraces, RedundantParens, SortImports]
-maxColumn = 125
