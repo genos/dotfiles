@@ -1,6 +1,5 @@
 source $HOME/.zshenv
 source $HOME/.zshprompt
-source $HOME/SOURCE_ME
 
 autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
@@ -49,7 +48,5 @@ fi
 source $HOME/._tmuxinator
 
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
