@@ -1,5 +1,4 @@
 START_YOUR_DAY: bin/START_YOUR_DAY
-_tmuxinator: ._tmuxinator
 astylerc: .astylerc
 bat: .config/bat/config
 beamer_template_tex: .pandoc/templates/beamer_template.tex
