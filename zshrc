@@ -18,7 +18,6 @@ typeset -U fpath
 path=(
   $HOME/bin
   $HOME/.local/bin
-  /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
@@ -28,13 +27,10 @@ path=(
   /Library/TeX/Distributions/Programs/texbin
   $HOME/.cargo/bin
   /usr/local/opt/python@3/bin
-  $GOPATH/bin
   $HOME/.poetry/bin
   $path
 )
 typeset -U path
-
-[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 if [ $commands[fasd] ]; then # check if fasd is installed
   fasd_cache="$HOME/.fasd-init-cache"
@@ -45,8 +41,9 @@ if [ $commands[fasd] ]; then # check if fasd is installed
   unset fasd_cache
 fi
 
-source $HOME/._tmuxinator
-
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+
