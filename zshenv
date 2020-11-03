@@ -36,7 +36,6 @@ alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias o='a -e open'
 alias py='python3'
-alias qfTest="sbt/sbt 'project qfish' 'test:compile' 'test-only * -- -l \"com.qf.test.tags.IntegrationTest com.qf.test.tags.ManualTest com.qf.test.tags.IgnoreTest\"'"
 alias rd='rmdir'
 alias s='fasd -si'
 alias sc='scalafmt -c $HOME/.scalafmt.conf'
