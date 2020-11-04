@@ -4,7 +4,7 @@ function ppprint() { print $1 | lolcat }
 function ppppprint() { print $1 | figlet -f big | lolcat -a }
 
 function repos() {
-  for repo in $HOME/qf/*; do
+  for repo in $HOME/rc/*; do
     ppprint "git pull in ${repo:t}…"
     cd $repo
     git pull --prune
@@ -25,16 +25,6 @@ function rusts() {
 function cabals() {
   ppprint "cabal update…"
   cabal update
-}
-
-# Don't include for now, may break current working python stuff
-function pips() {
-  ppprint "pip3 update >> pip_pypy3 update…"
-  for pip in 'pip3' 'pip_pypy3'; do
-    $pip list --outdated --format=freeze | \
-      cut -d = -f 1 | \
-      parallel "$pip install -U {}"
-  done
 }
 
 repos; brews; rusts; cabals; ppppprint "DONE!"
