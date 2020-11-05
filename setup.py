@@ -4,7 +4,7 @@
 import os
 from pathlib import Path
 
-DOTFILES = Path(__file__).parent
+DOTFILES = Path(__file__).parent.resolve()
 CONFIG = DOTFILES / Path("config.yaml")
 
 

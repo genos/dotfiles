@@ -4,7 +4,7 @@
 import os
 from pathlib import Path
 
-CONFIG = Path(__file__).parent / Path("config.yaml")
+CONFIG = Path(__file__).parent.resolve() / Path("config.yaml")
 
 
 def process(line: str) -> None:
