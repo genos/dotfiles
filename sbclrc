@@ -4,3 +4,8 @@
                                        (user-homedir-pathname))))
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
+
+
+;;; Modified from https://gitlab.com/rigetti/forest/qvm/-/blob/master/doc/lisp-setup.md#step-3-telling-quicklisp-where-your-code-i
+#+quicklisp
+(dolist (dir '(#P"Users/genos/rc/quilc" #P"/Users/genos/rc/qvm")) (push dir ql:*local-project-directories*))
