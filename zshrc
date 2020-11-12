@@ -1,19 +1,21 @@
 source $HOME/.zshenv
 source $HOME/.zshprompt
 
+# must come before compinit
+fpath=(
+  $HOME/site-functions
+  $fpath
+)
+typeset -U fpath
+
 autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
 else
   compinit -C
 fi
-bindkey -v
 
-fpath=(
-  $HOME/site-functions
-  $fpath
-)
-typeset -U fpath
+bindkey -v
 
 path=(
   $HOME/bin
