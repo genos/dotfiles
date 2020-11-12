@@ -5,9 +5,11 @@ function ppppprint() { print $1 | figlet -f big | lolcat -a }
 
 function repos() {
   for repo in $HOME/rc/*; do
-    ppprint "git pull in ${repo:t}…"
-    cd $repo
-    git pull --prune
+    if [ -d $repo ]; then
+      ppprint "git pull in ${repo:t}…"
+      cd $repo
+      git pull --prune
+    fi
   done
 }
 
