@@ -29,7 +29,6 @@ path=(
   /Library/TeX/Distributions/Programs/texbin
   $HOME/.cargo/bin
   /usr/local/opt/python@3/bin
-  $HOME/.poetry/bin
   $path
 )
 typeset -U path
@@ -56,3 +55,5 @@ fi
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
+
+[ -f $HOME/.poetry/env ] && source $HOME/.poetry/env
