@@ -1,6 +1,6 @@
 [user]
 	name = genos
-	email = graham@quantifind.com
+	email = genos@rigetti.com
 [alias]
 	ci = commit
 	di = diff --color-words
