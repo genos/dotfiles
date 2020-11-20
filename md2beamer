@@ -9,10 +9,10 @@ import subprocess
 
 def typeset(path: Path) -> None:
     """Convert a markdown file to Beamer & typeset it"""
-    output = path.rename(path.with_suffix(".pdf"))
+    output = path.with_suffix(".pdf")
     return subprocess.call(
         shlex.split(
-            f"pandoc -t beamer+smart --pdf-engine=xelatex --data-dir=$HOME/.pandoc --template=beamer_template.tex --listings {path} -o {output}"
+            f"pandoc -t beamer+smart --pdf-engine=xelatex --template=beamer_template.tex --listings {path} -o {output}"
         )
     )
 
