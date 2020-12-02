@@ -33,9 +33,10 @@ bind-key -Tcopy-mode-vi 'y' send -X copy-selection
 ## Scrolling in tmux
 set-option -g mouse on
 
-## https://github.com/tmux/tmux/issues/543#issuecomment-248980734
-set -g default-shell $SHELL
-set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+## https://github.com/tmux/tmux/issues/543#issuecomment-298193820
+setw -g mode-keys vi
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 ## https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
 set -g default-terminal 'tmux-256color'
