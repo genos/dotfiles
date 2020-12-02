@@ -14,7 +14,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
@@ -38,7 +37,6 @@ syntax on
 set laststatus=2  " always have a status line
 
 "Python providers
-let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 "Explicitly set clipboard (speeds things up by skipping system call)
