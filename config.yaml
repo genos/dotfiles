@@ -1,8 +1,8 @@
 START_YOUR_DAY: bin/START_YOUR_DAY
 astylerc: .astylerc
 bat: .config/bat/config
-beamer_template_tex: .pandoc/templates/beamer_template.tex
-beamer_dark_template_tex: .pandoc/templates/beamer_dark_template.tex
+beamer_template.tex: .pandoc/templates/beamer_template.tex
+beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 dups: bin/dups
 ghci: .ghci
 gitconfig: .gitconfig
@@ -15,10 +15,10 @@ nvim: .config/nvim
 passive: bin/passive
 pylintrc: .pylintrc
 sbclrc: .sbclrc
-stylish_haskell: .stylish-haskell.yaml
-summoner_toml: .summoner.toml
-tmux_conf: .tmux.conf
-tufte_template_tex: .pandoc/templates/tufte_template.tex
+stylish-haskell.yaml: .stylish-haskell.yaml
+summoner.toml: .summoner.toml
+tmux.conf: .tmux.conf
+tufte_template.tex: .pandoc/templates/tufte_template.tex
 vim: .vim
 vimrc: .vimrc
 weasel: bin/weasel
