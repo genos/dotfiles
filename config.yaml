@@ -16,6 +16,7 @@ passive: bin/passive
 pylintrc: .pylintrc
 sbclrc: .sbclrc
 stylish_haskell: .stylish-haskell.yaml
+summoner_toml: .summoner.toml
 tmux_conf: .tmux.conf
 tufte_template_tex: .pandoc/templates/tufte_template.tex
 vim: .vim
