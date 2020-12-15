@@ -6,8 +6,8 @@
 	di = diff --color-words
 	st = status
 	co = checkout
-	rom = rebase origin/master
-	romi = rebase -i --autosquash origin/master
+	rom = rebase origin/main
+	romi = rebase -i --autosquash origin/main
 	new = !git init && git symbolic-ref HEAD refs/heads/main
 [color]
 	ui = auto
