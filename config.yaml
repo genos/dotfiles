@@ -10,6 +10,7 @@ gitconfig: .gitconfig
 gvimrc: .gvimrc
 haskeline: .haskeline
 inputrc: .inputrc
+latexrun: bin/latexrun
 md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
 nvim: .config/nvim
