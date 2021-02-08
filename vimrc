@@ -28,6 +28,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vmchale/just-vim'
 call plug#end()
 
 "Turn on stuff
