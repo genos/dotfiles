@@ -14,13 +14,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'eigenfoo/stan-vim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sheerun/vim-polyglot'
@@ -28,7 +28,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-Plug 'vmchale/just-vim'
 call plug#end()
 
 "Turn on stuff
