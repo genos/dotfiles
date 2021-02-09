@@ -50,7 +50,7 @@ alias zz='fasd_cd -d -i'
 bindkey "^X^I" expand-or-complete-prefix
 
 export EDITOR='nvim'
-export FZF_DEFAULT_COMMAND='rg --color never -g "" --files'
+export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export HISTSIZE=10000
