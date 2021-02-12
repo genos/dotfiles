@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -76,7 +77,6 @@ set smarttab
 
 "Line numbers
 set number
-set numberwidth=5
 
 "Line and column position
 set ruler
@@ -157,3 +157,19 @@ nnoremap <leader>g :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>r :Rg<CR>
 nnoremap <Leader>t :Tags<CR>
+
+"ALE gutter: always on, but don't highlight it
+set signcolumn=yes
+highlight clear SignColumn
+"ALE linters & fixers
+let g:ale_linters = {
+\   'python': ['flake8', 'mypy']
+\}
+let g:ale_fixers = {
+\   'python': ['black']
+\}
+"go to next/previous ALE error
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"run ALEFix
+nmap <silent> <C-h> <Plug>(ale_fix)
