@@ -2,15 +2,15 @@
 """Convert a markdown file to Beamer & typeset it"""
 
 import argparse
-from pathlib import Path
+import pathlib
 import shlex
 import subprocess
 
 
-def typeset(path: Path) -> None:
+def typeset(path: pathlib.Path) -> None:
     """Convert a markdown file to Beamer & typeset it"""
     output = path.with_suffix(".pdf")
-    return subprocess.call(
+    subprocess.call(
         shlex.split(
             f"pandoc -t beamer+smart --pdf-engine=xelatex --template=beamer_template.tex --listings {path} -o {output}"
         )
@@ -19,7 +19,5 @@ def typeset(path: Path) -> None:
 
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description=__doc__)
-    PARSER.add_argument(
-        "-i", "--input", help="Markdown file to convert & typeset", required=True
-    )
-    typeset(Path(PARSER.parse_args().input))
+    PARSER.add_argument("-i", "--input", help="Markdown file to convert & typeset", required=True)
+    typeset(pathlib.Path(PARSER.parse_args().input))
