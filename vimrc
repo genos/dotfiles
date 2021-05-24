@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'segeljakt/vim-silicon'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -163,10 +164,14 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
-\   'python': ['flake8', 'mypy']
+\   'haskell': ['cabal_ghc', 'hlint'],
+\   'python': ['flake8', 'mypy'],
+\   'rust': ['analyzer']
 \}
 let g:ale_fixers = {
-\   'python': ['black']
+\   'haskell': ['brittany', 'stylish-haskell'],
+\   'python': ['black'],
+\   'rust': ['rustfmt']
 \}
 "go to next/previous ALE error
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)

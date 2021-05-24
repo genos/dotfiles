@@ -17,9 +17,13 @@ fi
 
 bindkey -v
 
+typeset -U path
 path=(
   $HOME/bin
   $HOME/.local/bin
+  $HOME/.cargo/bin
+  $PYENV_ROOT/bin
+  $GOPATH/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
@@ -27,11 +31,10 @@ path=(
   /bin
   /sbin
   /Library/TeX/Distributions/Programs/texbin
-  $HOME/.cargo/bin
   /usr/local/opt/python@3/bin
   $path
 )
-typeset -U path
+export -U PATH=$PATH
 
 if [ $commands[fasd] ]; then # check if fasd is installed
   fasd_cache="$HOME/.fasd-init-cache"
@@ -49,13 +52,14 @@ fi
 [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
+
+[ -f $HOME/.poetry/env ] && source $HOME/.poetry/env
 
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
-
-[ -f $HOME/.poetry/env ] && source $HOME/.poetry/env
 
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"

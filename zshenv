@@ -52,12 +52,14 @@ bindkey "^X^I" expand-or-complete-prefix
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export GOPATH="$HOME/go"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LESS='CiMQRX'
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export PYENV_ROOT="$HOME/.pyenv"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
 
