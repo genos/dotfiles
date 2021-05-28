@@ -17,7 +17,6 @@ fi
 
 bindkey -v
 
-typeset -U path
 path=(
   $HOME/bin
   $HOME/.local/bin
@@ -34,7 +33,7 @@ path=(
   /usr/local/opt/python@3/bin
   $path
 )
-export -U PATH=$PATH
+typeset -U path
 
 if [ $commands[fasd] ]; then # check if fasd is installed
   fasd_cache="$HOME/.fasd-init-cache"
