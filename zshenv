@@ -63,7 +63,6 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export PYENV_ROOT="$HOME/.pyenv"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
-export VIM="$HOME/.vim"
 
 function check_writing() {
   # Run the plaintext-ish file through various writing checks
