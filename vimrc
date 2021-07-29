@@ -156,7 +156,6 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>r :Rg<CR>
-nnoremap <Leader>t :Tags<CR>
 
 "ALE gutter: always on, but don't highlight it
 set signcolumn=yes
@@ -172,6 +171,9 @@ let g:ale_fixers = {
 \   'python': ['black'],
 \   'rust': ['rustfmt']
 \}
+"go to definition
+nnoremap <leader>d :ALEGoToDefinition<CR>
+nnoremap <leader>t :ALEGoToTypeDefinition<CR>
 "go to next/previous ALE error
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
