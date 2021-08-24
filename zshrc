@@ -143,6 +143,10 @@ fi
 
 bindkey -v
 
+if command -v zoxide 1>/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
