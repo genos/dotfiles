@@ -162,7 +162,7 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
-\   'haskell': ['cabal_ghc', 'hlint'],
+\   'haskell': ['cabal_ghc', 'hlint', 'hls'],
 \   'python': ['flake8', 'mypy'],
 \   'rust': ['analyzer']
 \}

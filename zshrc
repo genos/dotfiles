@@ -62,6 +62,11 @@ function check_writing() {
   fi
 }
 
+function gi() {
+  # generate .gitignore file
+  curl -sL https://www.toptal.com/developers/gitignore/api/$@
+}
+
 function hs() {
   # Search history with ripgrep
   history | rg "$*"
