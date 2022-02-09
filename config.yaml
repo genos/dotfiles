@@ -1,8 +1,7 @@
-START_YOUR_DAY: bin/START_YOUR_DAY
 astylerc: .astylerc
 bat: .config/bat/config
-beamer_template.tex: .pandoc/templates/beamer_template.tex
 beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
+beamer_template.tex: .pandoc/templates/beamer_template.tex
 brittany_config.yaml: .config/brittany/config.yaml
 dups: bin/dups
 ghci: .ghci
@@ -17,6 +16,7 @@ nvim: .config/nvim
 passive: bin/passive
 pylintrc: .pylintrc
 sbclrc: .sbclrc
+START_YOUR_DAY: bin/START_YOUR_DAY
 stylish-haskell.yaml: .stylish-haskell.yaml
 summoner.toml: .summoner.toml
 tmux.conf: .tmux.conf
