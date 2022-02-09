@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """Install my dotfiles"""
 
 import os
@@ -8,7 +8,7 @@ DOTFILES = Path(__file__).parent.resolve()
 CONFIG = DOTFILES / Path("config.yaml")
 
 
-def process(line: str) -> None:
+def process(line: str):
     """Split a line in the CONFIG and link the `right` to the `left`"""
     left, right = line.split(": ")
     actual, symlink = DOTFILES / left, Path.home() / right
@@ -18,7 +18,6 @@ def process(line: str) -> None:
 
 
 if __name__ == "__main__":
-    for LINE in CONFIG.read_text().split("\n"):
-        if LINE:
-            process(LINE)
+    for LINE in CONFIG.read_text().strip().split("\n"):
+        process(LINE)
     print("Done!")
