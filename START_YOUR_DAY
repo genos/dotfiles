@@ -24,9 +24,10 @@ function rusts() {
   rustup update
 }
 
-function cabals() {
-  ppprint "cabal update…"
+function haskells() {
+  ppprint "ghcup update >> cabal update"
+  ghcup update
   cabal update
 }
 
-repos; brews; rusts; cabals; ppppprint "DONE!"
+repos; brews; rusts; haskells; ppppprint "DONE!"
