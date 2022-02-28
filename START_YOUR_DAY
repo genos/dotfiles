@@ -25,8 +25,8 @@ function rusts() {
 }
 
 function haskells() {
-  ppprint "ghcup update >> cabal update"
-  ghcup update
+  ppprint "ghcup upgrade >> cabal update"
+  ghcup upgrade
   cabal update
 }
 
