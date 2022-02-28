@@ -12,7 +12,7 @@ inputrc: .inputrc
 latexrun: bin/latexrun
 md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
-nix_conf: .config/nix.conf
+nix_conf: .config/nix/nix.conf
 nvim: .config/nvim
 passive: bin/passive
 pylintrc: .pylintrc
