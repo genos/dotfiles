@@ -7,17 +7,18 @@ import shlex
 import subprocess
 
 
-def typeset(path: pathlib.Path) -> None:
+def typeset(path: pathlib.Path, dark: bool) -> None:
     """Convert a markdown file to Beamer & typeset it"""
+    template = "beamer_dark_template.tex" if dark else "beamer_template.tex"
     output = path.with_suffix(".pdf")
     subprocess.call(
-        shlex.split(
-            f"pandoc -t beamer+smart --pdf-engine=xelatex --template=beamer_template.tex --listings {path} -o {output}"
-        )
+        shlex.split(f"pandoc -t beamer+smart --pdf-engine=xelatex --template={template} --listings {path} -o {output}")
     )
 
 
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description=__doc__)
-    PARSER.add_argument("-i", "--input", help="Markdown file to convert & typeset", required=True)
-    typeset(pathlib.Path(PARSER.parse_args().input))
+    PARSER.add_argument("input", help="Markdown file to convert & typeset")
+    PARSER.add_argument("-d", "--dark", help="Use dark template", action="store_true", required=False)
+    ARGS = PARSER.parse_args()
+    typeset(pathlib.Path(ARGS.input), ARGS.dark)

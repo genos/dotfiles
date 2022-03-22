@@ -19,5 +19,5 @@ def typeset(path: pathlib.Path) -> None:
 
 if __name__ == "__main__":
     PARSER = argparse.ArgumentParser(description=__doc__)
-    PARSER.add_argument("-i", "--input", help="Markdown file to convert & typeset", required=True)
+    PARSER.add_argument("input", help="Markdown file to convert & typeset")
     typeset(pathlib.Path(PARSER.parse_args().input))
