@@ -22,7 +22,6 @@ Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'segeljakt/vim-silicon'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -167,6 +166,7 @@ let g:ale_linters = {
 \   'rust': ['analyzer']
 \}
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'haskell': ['brittany', 'stylish-haskell'],
 \   'python': ['black'],
 \   'rust': ['rustfmt']
