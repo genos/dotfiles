@@ -43,7 +43,8 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:clipboard = { 'name': 'pbcopy',
                   \ 'copy': { '+': 'pbcopy', '*': 'pbcopy' },
                   \ 'paste': {'+': 'pbpaste', '*': 'pbpaste' },
-                  \ 'cache_enabled': 0 }
+                  \ 'cache_enabled': 0,
+                  \ }
 
 "Colors & highlighting
 set t_Co=256
@@ -160,18 +161,16 @@ nnoremap <Leader>r :Rg<CR>
 set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
-let g:ale_linters = {
-\   'haskell': ['cabal_ghc', 'hlint', 'hls'],
-\   'python': ['flake8', 'mypy'],
-\   'rust': ['analyzer']
-\}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'haskell': ['brittany', 'stylish-haskell'],
-\   'python': ['black'],
-\   'rust': ['rustfmt']
-\}
-"go to definition
+let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
+                    \ 'python': ['flake8', 'mypy'],
+                    \ 'rust': ['analyzer'],
+                    \ }
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
+                   \ 'haskell': ['brittany', 'stylish-haskell'],
+                   \ 'python': ['black'],
+                   \ 'rust': ['rustfmt'],
+                   \ }
+"go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
 "go to next/previous ALE error
