@@ -22,6 +22,8 @@ Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'segeljakt/vim-silicon'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -50,6 +52,7 @@ let g:clipboard = { 'name': 'pbcopy',
 set t_Co=256
 highlight LineNr ctermfg=DarkGrey
 highlight Comment cterm=italic gui=italic
+let g:limelight_conceal_ctermfg="DarkGrey"
 
 "Set encoding to utf-8
 set enc=utf-8
