@@ -165,6 +165,7 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
+                    \ 'clojure': ['clj-kondo', 'joker'],
                     \ 'python': ['flake8', 'mypy'],
                     \ 'rust': ['analyzer'],
                     \ }
@@ -173,6 +174,8 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'python': ['black'],
                    \ 'rust': ['rustfmt'],
                    \ }
+"ALE autocomplete
+let g:ale_completion_enabled = 1
 "go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
