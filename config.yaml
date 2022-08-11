@@ -7,7 +7,6 @@ cookiecutterrc: .cookiecutterrc
 dups: bin/dups
 ghci: .ghci
 gitconfig: .gitconfig
-gvimrc: .gvimrc
 haskeline: .haskeline
 inputrc: .inputrc
 latexrun: bin/latexrun
@@ -16,7 +15,6 @@ md2tufte: bin/md2tufte
 nix_conf: .config/nix/nix.conf
 nvim: .config/nvim
 passive: bin/passive
-pylintrc: .pylintrc
 radian: .config/radian/profile
 sbclrc: .sbclrc
 START_YOUR_DAY: bin/START_YOUR_DAY

@@ -2,7 +2,7 @@
 # Finds duplicate adjacent words; modified from
 # http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 
-use Modern::Perl '2017';
+use Modern::Perl '2022';
 use autodie;
 
 if ( !@ARGV ) {
