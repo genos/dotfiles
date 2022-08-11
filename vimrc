@@ -155,8 +155,8 @@ set tags=tags;/
 set clipboard=unnamed
 
 "fzf speedily
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>r :Rg<CR>
 
