@@ -10,3 +10,5 @@ options(radian.indent_lines = TRUE)
 # auto indentation for new line and curly braces
 options(radian.auto_indentation = TRUE)
 options(radian.tab_size = 4)
+# don't auto match brackets and quotes
+options(radian.auto_match = FALSE)
