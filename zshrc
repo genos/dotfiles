@@ -163,6 +163,7 @@ setopt share_history # share command history data
 zstyle ':completion:*' list-colors "${(s.:.)LSCOLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit
+autoload -Uz zmv
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
 else
@@ -185,8 +186,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
-
-[ -f $HOME/.poetry/env ] && source $HOME/.poetry/env
 
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init -)"
