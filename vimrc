@@ -22,6 +22,7 @@ Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'segeljakt/vim-silicon'
 Plug 'sheerun/vim-polyglot'
