@@ -164,6 +164,7 @@ nnoremap <Leader>r :Rg<CR>
 set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
+let g:ale_haskell_ormolu_executable = 'fourmolu'
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
                     \ 'clojure': ['clj-kondo', 'joker'],
                     \ 'python': ['flake8', 'mypy'],
