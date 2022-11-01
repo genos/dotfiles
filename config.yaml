@@ -19,7 +19,6 @@ radian: .config/radian/profile
 sbclrc: .sbclrc
 START_YOUR_DAY: bin/START_YOUR_DAY
 stylish-haskell.yaml: .stylish-haskell.yaml
-summoner.toml: .summoner.toml
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
 vim: .vim
