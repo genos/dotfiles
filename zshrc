@@ -1,6 +1,5 @@
 source $HOME/.zshprompt
 
-alias -- -='cd -'
 alias -g ....='../../..'
 alias -g ...='../..'
 alias cp='nocorrect cp'
@@ -19,7 +18,6 @@ alias gp='git push'
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias gst='git status'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
-alias history='fc -il 1'
 alias ip='ipython'
 alias ipn='jupyter notebook'
 alias l='exa --git --header --long'
@@ -35,10 +33,9 @@ alias pjn='poetry run jupyter notebook'
 alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
-alias v='f -e $EDITOR'
-alias whihc='which'
 
 bindkey "^X^I" expand-or-complete-prefix
+bindkey -v
 
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND="fd --type file"
@@ -48,8 +45,7 @@ export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export LESS='CiMQRX'
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export LESS='ciMQRX'
 export PYENV_ROOT="$HOME/.pyenv"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
@@ -161,35 +157,28 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
 
-zstyle ':completion:*' list-colors "${(s.:.)LSCOLORS}"
+zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-autoload -Uz compinit
 autoload -Uz zmv
+autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
 else
   compinit -C
 fi
 
-bindkey -v
-
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
-
-[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+[[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ]] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path --no-rehash)"
 fi
 
 if command -v rbenv 1>/dev/null 2>&1; then
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - --no-rehash)"
 fi
-
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
