@@ -166,14 +166,12 @@ highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_haskell_ormolu_executable = 'fourmolu'
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
-                    \ 'clojure': ['clj-kondo', 'joker'],
-                    \ 'ocaml': ['merlin'],
+                    \ 'clojure': ['joker'],
                     \ 'python': ['flake8', 'mypy'],
                     \ 'rust': ['analyzer'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'haskell': ['ormolu'],
-                   \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['black'],
                    \ 'rust': ['rustfmt'],
                    \ }
