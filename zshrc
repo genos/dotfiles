@@ -37,6 +37,7 @@ alias touch='nocorrect touch'
 bindkey "^X^I" expand-or-complete-prefix
 bindkey -v
 
+export BUN_INSTALL="$HOME/.bun"
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -61,6 +62,7 @@ path=(
   $HOME/.cargo/bin
   $PYENV_ROOT/bin
   $GOPATH/bin
+  $BUN_INSTALL/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
@@ -182,3 +184,5 @@ fi
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - --no-rehash)"
 fi
+
+[[ -f "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
