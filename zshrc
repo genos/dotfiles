@@ -186,3 +186,6 @@ if command -v rbenv 1>/dev/null 2>&1; then
 fi
 
 [[ -f "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+
+# opam configuration
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
