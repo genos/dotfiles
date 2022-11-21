@@ -15,6 +15,7 @@ md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
 nix_conf: .config/nix/nix.conf
 nvim: .config/nvim
+ocamlinit: .ocamlinit
 passive: bin/passive
 radian: .config/radian/profile
 sbclrc: .sbclrc
