@@ -30,6 +30,7 @@ alias mv='nocorrect mv'
 alias o='a -e open'
 alias pjc='poetry run jupyter console'
 alias pjn='poetry run jupyter notebook'
+alias prp='poetry run python'
 alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
@@ -186,3 +187,5 @@ if command -v rbenv 1>/dev/null 2>&1; then
 fi
 
 [[ -f "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+
+[[ -f "$HOME/perl5/lib/perl5" ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
