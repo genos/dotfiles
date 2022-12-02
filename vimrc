@@ -3,7 +3,7 @@ set nomodeline
 set modelines=0
 
 if !has('nvim')
-  set nocompatible               " be iMproved
+  set nocompatible " be iMproved
 endif
 
 "Plugin time: https://github.com/junegunn/vim-plug
@@ -14,22 +14,19 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'genos/quil-vim'
 Plug 'godlygeek/tabular'
-Plug 'jgdavey/tslime.vim', {'branch': 'main'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "Turn on stuff
@@ -52,7 +49,7 @@ let g:clipboard = { 'name': 'pbcopy',
 set t_Co=256
 highlight LineNr ctermfg=DarkGrey
 highlight Comment cterm=italic gui=italic
-let g:limelight_conceal_ctermfg="DarkGrey"
+let g:airline_theme="molokai"
 
 "Set encoding to utf-8
 set enc=utf-8
@@ -142,11 +139,6 @@ set backspace=indent,eol,start
 
 "Use the mouse!?
 set mouse=a
-
-"tslime.vim key mappings
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
 
 "Move up the directory hierarchy until you find a tags file
 set tags=tags;/
