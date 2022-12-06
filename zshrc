@@ -42,7 +42,6 @@ export BUN_INSTALL="$HOME/.bun"
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="fd --type file"
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export GOPATH="$HOME/go"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
