@@ -159,7 +159,7 @@ highlight clear SignColumn
 let g:ale_haskell_ormolu_executable = 'fourmolu'
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
                     \ 'clojure': ['joker'],
-                    \ 'python': ['flake8', 'mypy'],
+                    \ 'python': ['flake8', 'mypy', 'pyright'],
                     \ 'rust': ['analyzer'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
