@@ -38,6 +38,7 @@ alias touch='nocorrect touch'
 bindkey "^X^I" expand-or-complete-prefix
 bindkey -v
 
+export AWS_PROFILE=qml-qec
 export BUN_INSTALL="$HOME/.bun"
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
