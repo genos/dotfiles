@@ -15,17 +15,20 @@ function repos() {
 
 function brews() {
   ppprint "brew update >>= upgrade >>= cask upgrade >>= cleanup…"
+  cd $HOME
   brew update && brew upgrade && brew upgrade --cask && brew cleanup
 }
 
 function rusts() {
   ppprint "rustup self update >> rustup update"
+  cd $HOME
   rustup self update
   rustup update
 }
 
 function haskells() {
   ppprint "ghcup upgrade >> cabal update"
+  cd $HOME
   ghcup upgrade
   cabal update
 }
