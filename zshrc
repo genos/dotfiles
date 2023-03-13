@@ -27,7 +27,6 @@ alias lrt='exa --long --sort=modified'
 alias ls='ls -G'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
-alias o='a -e open'
 alias pjc='poetry run jupyter console'
 alias pjn='poetry run jupyter notebook'
 alias pri='poetry run ipython'
@@ -41,6 +40,7 @@ bindkey -v
 
 export AWS_PROFILE=qml-qec
 export BUN_INSTALL="$HOME/.bun"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="fd --type file"
