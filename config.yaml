@@ -2,7 +2,6 @@ astylerc: .astylerc
 bat: .config/bat/config
 beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 beamer_template.tex: .pandoc/templates/beamer_template.tex
-brittany_config.yaml: .config/brittany/config.yaml
 cabal_config: .cabal/config
 dups: bin/dups
 ghci: .ghci
@@ -18,7 +17,6 @@ passive: bin/passive
 radian: .config/radian/profile
 sbclrc: .sbclrc
 START_YOUR_DAY: bin/START_YOUR_DAY
-stylish-haskell.yaml: .stylish-haskell.yaml
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
 vim: .vim
