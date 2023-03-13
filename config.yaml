@@ -4,7 +4,6 @@ beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 beamer_template.tex: .pandoc/templates/beamer_template.tex
 brittany_config.yaml: .config/brittany/config.yaml
 cabal_config: .cabal/config
-cookiecutterrc: .cookiecutterrc
 dups: bin/dups
 ghci: .ghci
 gitconfig: .gitconfig

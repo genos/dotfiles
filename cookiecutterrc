@@ -1,4 +1,0 @@
-default_context:
-    author_name: "Graham Enos"
-    author_email: "genos@rigetti.com"
-cookiecutters_dir: "~/.cookiecutters/"
