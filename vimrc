@@ -14,7 +14,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'eigenfoo/stan-vim'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'genos/quil-vim'
@@ -22,7 +21,6 @@ Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mlochbaum/BQN', {'rtp': 'editors/vim'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -35,9 +33,10 @@ call plug#end()
 filetype plugin indent on
 syntax on
 
-set laststatus=2  " always have a status line
+" always have a status line
+set laststatus=2
 
-"Python providers
+"Python provider
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 "Explicitly set clipboard (speeds things up by skipping system call)
@@ -115,16 +114,6 @@ let mapleader = ","
 "Quickly get out of searches
 nnoremap <leader><space> :noh<cr>
 
-"Whip you into Vim shape! (disable arrow buttons)
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 "Jump screenlines, not lines of text
 nnoremap j gj
 nnoremap k gk
@@ -179,6 +168,3 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
-
-"Silicon default appearance
-let g:silicon = {'font': 'Triplicate T4c'}
