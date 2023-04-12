@@ -2,5 +2,4 @@
 :set prompt "\ESC[36mλ⋙ \ESC[m"
 :set +m
 :set +t
-:def hlint const . return $ ":! hlint \"src\""
 :def hoogle \s -> return $ ":! hoogle --count=17 \"" ++ s ++ "\""
