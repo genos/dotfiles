@@ -1,4 +1,3 @@
-astylerc: .astylerc
 bat: .config/bat/config
 beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 beamer_template.tex: .pandoc/templates/beamer_template.tex

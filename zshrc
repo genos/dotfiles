@@ -35,11 +35,10 @@ alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
 
-bindkey "^X^I" expand-or-complete-prefix
-bindkey -v
+bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
+bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
 
 export AWS_PROFILE=qml-qec
-export BUN_INSTALL="$HOME/.bun"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -65,7 +64,6 @@ path=(
   $HOME/.cargo/bin
   $PYENV_ROOT/bin
   $GOPATH/bin
-  $BUN_INSTALL/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
@@ -113,58 +111,31 @@ function man() {
     man "$@"
 }
 
-function nix_haskell() {
-  # Open up a nix environment with optional packages
-  # - http://alpmestan.com/posts/2017-09-06-quick-haskell-hacking-with-nix.html
-  # - https://nixos.org/manual/nixpkgs/stable/#haskell
-  pkgs=$@
-  if [[ $# -gt 0 ]];
-  then
-    print "Starting haskell shell, pkgs = $pkgs"
-    nix-shell --pure -p "haskellPackages.ghcWithPackages (ps: with ps; [$pkgs])"
-  else
-    print "Starting haskell shell"
-    nix-shell --pure -p "haskellPackages.ghc"
-	fi
-}
-
-function zsh_stats() {
-  # Get a breakdown of most common zsh commands
-  fc -l 1 | \
-    awk '{CMD[$2]++;count++;}END{for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | \
-    rg -v "./" | \
-    column -c3 -s " " -t | \
-    sort -nr | \
-    nl | \
-    head -n20
-}
-
 ## Command history configuration
 if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
 fi
 
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
-setopt auto_menu         # show completion menu on successive tab press
-setopt complete_in_word
-setopt always_to_end
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups # ignore duplication command history list
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
-setopt share_history # share command history data
+setopt auto_cd                # If a command is issued that can’t be executed as a normal command, and the command is the name of a directory, perform the cd command to that directory
+setopt auto_pushd             # Make cd push the old directory onto the directory stack.
+setopt pushd_ignore_dups      # Don’t push multiple copies of the same directory onto the directory stack.
+setopt pushdminus             # Exchanges the meanings of ‘+’ and ‘-’ when used with a number to specify a directory in the stack.
+unsetopt menu_complete        # Do not autoselect the first completion entry
+unsetopt flowcontrol          # Output flow control via start/stop characters (usually assigned to ^S/^Q) is disabled in the shell’s editor.
+setopt auto_menu              # Show completion menu on successive tab press
+setopt complete_in_word       # Don't set the cursor to the end of the word if completion is started.
+setopt always_to_end          # If a completion is performed with the cursor within a word, and a full completion is inserted, the cursor is moved to the end of the word.
+setopt append_history         # Zsh sessions will append their history list to the history file, rather than replace it.
+setopt extended_history       # Save each command’s beginning timestamp (in seconds since the epoch) and the duration (in seconds) to the history file.
+setopt hist_expire_dups_first # If the internal history needs to be trimmed to add the current command line, setting this option will cause the oldest history event that has a duplicate to be lost before losing a unique event from the list.
+setopt hist_ignore_dups       # Ignore duplication command history list.
+setopt hist_ignore_space      # Remove command lines from the history list when the first character on the line is a space, or when one of the expanded aliases contains a leading space.
+setopt hist_verify            # Whenever the user enters a line with history expansion, don’t execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
+setopt inc_append_history     # Incrementally append history.
+setopt share_history          # Share command history data
 
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-autoload -Uz zmv
+zstyle ':completion:*' list-colors ''  # Color the completion options
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'  # Case-insensitive, then partial-word completion
 autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
@@ -172,24 +143,28 @@ else
   compinit -C
 fi
 
+# zoxide for moving around
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
+# fzf for fuzzy file finding
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
+# ghcup configuration
 [[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ]] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
+# pyenv configuration
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path --no-rehash)"
 fi
 
+# rbenv configuration
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
-[[ -f "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
-
+# perl inclusion
 [[ -f "$HOME/perl5/lib/perl5" ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # opam configuration
