@@ -73,7 +73,6 @@ path=(
   /bin
   /sbin
   /Library/TeX/Distributions/Programs/texbin
-  /usr/local/opt/python@3/bin
   $path
 )
 typeset -U path
