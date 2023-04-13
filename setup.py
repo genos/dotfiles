@@ -13,7 +13,7 @@ def process(line: str):
     left, right = line.split(": ")
     actual, symlink = DOTFILES / left, Path.home() / right
     if not symlink.parent.exists():
-        os.mkdir(symlink.parent)
+        os.makedirs(symlink.parent)
     symlink.symlink_to(actual)
 
 
