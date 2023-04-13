@@ -1,4 +1,6 @@
-source $HOME/.zshprompt
+# Initialize colors.
+autoload -U colors && colors
+PROMPT='%F{cyan}%~%f %F{green}∃%f '
 
 alias -g ....='../../..'
 alias -g ...='../..'
