@@ -21,5 +21,4 @@ tufte_template.tex: .pandoc/templates/tufte_template.tex
 vim: .vim
 vimrc: .vimrc
 weasel: bin/weasel
-zshprompt: .zshprompt
 zshrc: .zshrc
