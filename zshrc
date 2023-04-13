@@ -145,6 +145,9 @@ else
   compinit -C
 fi
 
+# homebrew
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # zoxide for moving around
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
@@ -158,8 +161,11 @@ fi
 
 # pyenv configuration
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path --no-rehash)"
+  eval "$(pyenv init -)"
 fi
+
+# rustup configuration
+[[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 # rbenv configuration
 if command -v rbenv 1>/dev/null 2>&1; then
