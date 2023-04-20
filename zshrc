@@ -171,8 +171,5 @@ if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
-# perl inclusion
-[[ -f "$HOME/perl5/lib/perl5" ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
-
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
