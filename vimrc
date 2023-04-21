@@ -37,7 +37,7 @@ syntax on
 set laststatus=2
 
 "Python provider
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = 'python3'
 
 "Explicitly set clipboard (speeds things up by skipping system call)
 let g:clipboard = { 'name': 'pbcopy',
