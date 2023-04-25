@@ -143,10 +143,15 @@ setopt hist_ignore_dups       # Ignore duplication command history list.
 setopt hist_ignore_space      # Remove command lines from the history list when the first character on the line is a space, or when one of the expanded aliases contains a leading space.
 setopt hist_verify            # Whenever the user enters a line with history expansion, don’t execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 setopt inc_append_history     # Incrementally append history.
-setopt share_history          # Share command history data
+unsetopt share_history        # Don't immediately pick up new commands from other concurrent shells.
 
-zstyle ':completion:*' list-colors ''  # Color the completion options
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'  # Case-insensitive, then partial-word completion
+zstyle ':completion:*' list-colors ''  # Color the completion options.
+zstyle ':completion:*' menu select     # Offer up a menu.
+# Case-insensitive partial word and substring completion.
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _expand _complete _approximate _ignored
+# Kill completion
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
