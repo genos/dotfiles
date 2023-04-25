@@ -1,6 +1,16 @@
 # Initialize colors.
 autoload -U colors && colors
+autoload -Uz vcs_info
+precmd() { vcs_info }
 PROMPT='%F{cyan}%~%f %F{green}∃%f '
+setopt prompt_subst  # The prompt string is first subjected to parameter expansion, command substitution and arithmetic expansion.
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*:*' stagedstr '●'
+zstyle ':vcs_info:*:*' unstagedstr '●'
+zstyle ':vcs_info:*:*' formats '%F{green}%c%f%F{red}%u%f %F{cyan}%b%f'
+zstyle ':vcs_info:*:*' actionformats '%F{green}%c%f%F{red}%u%f %F{cyan}%b%f%F{magenta}(%a)%f'
 
 alias -g ....='../../..'
 alias -g ...='../..'
