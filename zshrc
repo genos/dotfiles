@@ -142,6 +142,7 @@ setopt hist_ignore_space      # Remove command lines from the history list when 
 setopt hist_verify            # Whenever the user enters a line with history expansion, don’t execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 setopt inc_append_history     # Incrementally append history.
 unsetopt share_history        # Don't immediately pick up new commands from other concurrent shells.
+setopt no_list_beep           # Disable bell when tab completing.
 
 zstyle ':completion:*' list-colors ''  # Color the completion options.
 zstyle ':completion:*' menu select     # Offer up a menu.
@@ -191,3 +192,6 @@ fi
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# zsh syntax highlighting
+[[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
