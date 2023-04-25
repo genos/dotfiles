@@ -51,7 +51,6 @@ bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the curren
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
 
 export AWS_PROFILE=qml-qec
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="fd --type file"
@@ -60,7 +59,6 @@ export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export LESS='ciMQRX'
 export PYENV_ROOT="$HOME/.pyenv"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
@@ -97,7 +95,7 @@ function check_writing() {
 }
 
 function gi() {
-  # generate .gitignore file
+  # Generate .gitignore file
   curl -sL https://www.toptal.com/developers/gitignore/api/$@
 }
 
@@ -107,7 +105,7 @@ function hs() {
 }
 
 function man() {
-  # pretty manpage
+  # Pretty manpages
   env \
     LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
     LESS_TERMCAP_md="$(printf "\e[1;31m")" \
