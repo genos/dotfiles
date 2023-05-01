@@ -16,7 +16,7 @@ function repos() {
 function brews() {
   ppprint "brew update >>= upgrade >>= cask upgrade >>= cleanup…"
   cd $HOME
-  brew update && brew upgrade && brew upgrade --cask && brew cleanup
+  brew update && brew upgrade --greedy && brew upgrade --cask && brew cleanup
 }
 
 function rusts() {
