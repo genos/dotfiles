@@ -158,17 +158,20 @@ else
   compinit -C
 fi
 
-# homebrew
-[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# brew install zsh-completions
-if command -v brew 1>/dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# If _not_ in TMUX, setup homebrew
+if [[ -z $TMUX ]]; then
+  # homebrew
+  [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # zoxide for moving around
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
+fi
+
+# brew install zsh-completions
+if command -v brew 1>/dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 fi
 
 # fzf for fuzzy file finding
