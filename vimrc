@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -51,7 +52,8 @@ let g:clipboard = { 'name': 'pbcopy',
 set t_Co=256
 highlight LineNr ctermfg=DarkGrey
 highlight Comment cterm=italic gui=italic
-let g:airline_theme="molokai"
+colorscheme catppuccin
+let g:airline_theme="catppuccin"
 
 "Set encoding to utf-8
 set enc=utf-8
