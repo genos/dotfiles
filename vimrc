@@ -49,11 +49,18 @@ let g:clipboard = { 'name': 'pbcopy',
                   \ }
 
 "Colors & highlighting
-set t_Co=256
+"https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
+function! MyHighlights() abort
+    highlight Conditional cterm=NONE gui=NONE guifg=#cba6f7
+endfunction
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+colorscheme catppuccin-mocha
+let g:airline_theme="catppuccin"
 highlight LineNr ctermfg=DarkGrey
 highlight Comment cterm=italic gui=italic
-colorscheme catppuccin
-let g:airline_theme="catppuccin"
 
 "Set encoding to utf-8
 set enc=utf-8
