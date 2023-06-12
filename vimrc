@@ -55,7 +55,7 @@ function! MyHighlights() abort
 endfunction
 augroup MyColors
     autocmd!
-    autocmd ColorScheme * call MyHighlights()
+    autocmd ColorScheme catppuccin-mocha,catppuccin-macchiato,catppuccin-frappe,catppuccin-latte call MyHighlights()
 augroup END
 colorscheme catppuccin-mocha
 let g:airline_theme="catppuccin"
