@@ -46,6 +46,7 @@ alias prp='poetry run python'
 alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
+alias vlime="sbcl --load $HOME/github/dotfiles/vim/plugged/vlime/lisp/start-vlime.lisp"
 
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.

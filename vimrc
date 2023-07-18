@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'benknoble/vim-racket'
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -30,6 +31,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
 
 "Turn on stuff
@@ -160,6 +162,7 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['black'],
+                   \ 'racket': ['raco_fmt'],
                    \ 'rust': ['rustfmt'],
                    \ }
 "ALE use virtualenvs
