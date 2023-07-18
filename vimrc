@@ -13,7 +13,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -23,7 +22,9 @@ Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kaarmu/typst.vim'
+Plug 'Olical/conjure'
 Plug 'sheerun/vim-polyglot'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -49,17 +50,10 @@ let g:clipboard = { 'name': 'pbcopy',
                   \ }
 
 "Colors & highlighting
-"https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f
-function! MyHighlights() abort
-    highlight Conditional cterm=NONE gui=NONE guifg=#cba6f7
-endfunction
-augroup MyColors
-    autocmd!
-    autocmd ColorScheme catppuccin-mocha,catppuccin-macchiato,catppuccin-frappe,catppuccin-latte call MyHighlights()
-augroup END
-colorscheme catppuccin-mocha
-let g:airline_theme="catppuccin"
-highlight LineNr ctermfg=DarkGrey
+set termguicolors
+colorscheme molokai
+let g:airline_theme="molokai"
+let g:molokai_original = 1
 highlight Comment cterm=italic gui=italic
 
 "Set encoding to utf-8
@@ -118,8 +112,9 @@ set scrolloff=3
 "Decently fast, since we've got a modern computer
 set ttyfast
 
-"Follow the leader
-let mapleader = ","
+"Following the (local) leader
+let mapleader = " "
+let maplocalleader = ","
 
 "Quickly get out of searches
 nnoremap <leader><space> :noh<cr>
@@ -168,6 +163,9 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'python': ['black'],
                    \ 'rust': ['rustfmt'],
                    \ }
+"ALE use virtualenvs
+let g:ale_python_auto_poetry = 1
+let g:ale_python_auto_virtualenv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
 "go to definitions
@@ -178,3 +176,7 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
+
+"Conjure scheme: Chez
+let g:conjure#client#scheme#stdio#command = "scheme"
+let g:conjure#client#scheme#stdio#prompt_pattern = "> $?"
