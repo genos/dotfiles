@@ -23,7 +23,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kaarmu/typst.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'Olical/conjure'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -113,9 +112,8 @@ set scrolloff=3
 "Decently fast, since we've got a modern computer
 set ttyfast
 
-"Following the (local) leader
-let mapleader = " "
-let maplocalleader = ","
+"Following the leader
+let mapleader = ","
 
 "Quickly get out of searches
 nnoremap <leader><space> :noh<cr>
@@ -177,9 +175,3 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
-
-"Conjure scheme: Chez
-let g:conjure#client#scheme#stdio#command = "scheme"
-let g:conjure#client#scheme#stdio#prompt_pattern = "> $?"
-"Conjure with TreeSitter
-let g:conjure#extract#tree_sitter#enabled = 1
