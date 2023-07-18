@@ -1,1 +1,1 @@
---theme="Catppuccin-mocha"
+--theme="Monokai Extended Bright"
