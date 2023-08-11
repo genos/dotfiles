@@ -159,11 +159,8 @@ else
   compinit -C
 fi
 
-# If _not_ in TMUX, setup homebrew
-if [[ -z $TMUX ]]; then
-  # homebrew
-  [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# homebrew
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # zoxide for moving around
 if command -v zoxide 1>/dev/null 2>&1; then
@@ -196,6 +193,9 @@ fi
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# rakubrew
+[[ -f $HOME/.rakubrew/bin/rakubrew ]] && eval "$($HOME/.rakubrew/bin/rakubrew init Zsh)"
 
 # zsh syntax highlighting
 [[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

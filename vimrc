@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'bakpakin/janet.vim'
 Plug 'benknoble/vim-racket'
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
@@ -154,15 +155,16 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
+                    \ 'clojure': ['clj-kondo'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
+                   \ 'bazel': ['buildifier'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['black'],
-                   \ 'racket': ['raco_fmt'],
                    \ 'rust': ['rustfmt'],
                    \ }
 "ALE use virtualenvs
