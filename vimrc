@@ -14,17 +14,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'bakpakin/janet.vim'
-Plug 'benknoble/vim-racket'
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
-Plug 'genos/quil-vim'
 Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'kaarmu/typst.vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'rhysd/vim-llvm'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -38,9 +35,6 @@ call plug#end()
 "Turn on stuff
 filetype plugin indent on
 syntax on
-
-" always have a status line
-set laststatus=2
 
 "Python provider
 let g:python3_host_prog = 'python3'
@@ -59,90 +53,43 @@ let g:airline_theme="molokai"
 let g:molokai_original = 1
 highlight Comment cterm=italic gui=italic
 
-"Set encoding to utf-8
-set enc=utf-8
-
-"Each line follows the indentation of the line above
-set autoindent
-
-"Don't indent access specifiers or labels in C, C++
-set cinoptions=L0,g0
-
-"Show matching parenthesis, etc.
-set showmatch
-
-"Insert spaces instead of tabs
-set expandtab
-
-"Tab length is 2 spaces
-set tabstop=2
-
-"Use 2 spaces for << and >> commands
-set shiftwidth=2
-
-"Use shiftwidth instead of tabstop setting
-set smarttab
-
-"Line numbers
-set number
-
-"Line and column position
-set ruler
-
-"Highlight search match(es)
-set hlsearch
-
-"Incremental search as search is typed
-set incsearch
+set laststatus=2               " Always have a status line
+set enc=utf-8                  " Set encoding to utf-8
+set autoindent                 " Each line follows the indentation of the line above
+set showmatch                  " Show matching parenthesis, etc.
+set expandtab                  " Insert spaces instead of tabs
+set tabstop=2                  " Tab length is 2 spaces
+set shiftwidth=2               " Use 2 spaces for << and >> commands
+set smarttab                   " Use shiftwidth instead of tabstop setting
+set number                     " Line numbers
+set ruler                      " Line and column position
+set hlsearch                   " Highlight search match(es)
+set incsearch                  " Incremental search as search is typed
+set nojoinspaces               " Don't include an extra space when joining lines
+set ignorecase                 " Ignore case in searching (unless specified)
+set smartcase                  " Ignore case in searching (unless specified)
+set scrolloff=3                " Don't go off bottom of screen
+set ttyfast                    " Decently fast, since we've got a modern computer
+set wildmenu                   " Tab-complete commands etc.
+set wildmode=longest,full      " Tab-complete commands etc.
+set backspace=indent,eol,start " Backspace all the things
+set mouse=a                    " Use the mouse!?
+set tags=tags;/                " Move up the directory hierarchy until you find a tags file
+set clipboard=unnamed          " Allow vim access to system clipboard
+let mapleader = ","            " Following the leader
 
 "Use shift-tab to unindent
 inoremap <S-Tab> <C-D>
-
-"Don't include an extra space when joining lines
-set nojoinspaces
-
 "Perl/Python regexes instead of Vim's
 nnoremap / /\v
 vnoremap / /\v
-
-"Ignore case in searching (unless specified)
-set ignorecase
-set smartcase
-
-"Don't go off bottom of screen
-set scrolloff=3
-
-"Decently fast, since we've got a modern computer
-set ttyfast
-
-"Following the leader
-let mapleader = ","
-
 "Quickly get out of searches
 nnoremap <leader><space> :noh<cr>
-
 "Jump screenlines, not lines of text
 nnoremap j gj
 nnoremap k gk
-
 "Save on losing focus, in case we tab away
 au FocusLost * :wa
-
-"Tab-complete commands etc.
-set wildmenu
-set wildmode=longest,full
-
-"Backspace all the things
-set backspace=indent,eol,start
-
-"Use the mouse!?
-set mouse=a
-
-"Move up the directory hierarchy until you find a tags file
-set tags=tags;/
-
-"Allow vim access to system clipboard
-set clipboard=unnamed
 
 "fzf speedily
 nnoremap <Leader>f :Files<CR>
@@ -162,6 +109,7 @@ let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'bazel': ['buildifier'],
+                   \ 'cpp': ['clang-format'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['black'],
