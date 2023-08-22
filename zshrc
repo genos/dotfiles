@@ -46,20 +46,22 @@ alias prp='poetry run python'
 alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
-alias vlime="sbcl --load $HOME/github/dotfiles/vim/plugged/vlime/lisp/start-vlime.lisp"
+alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
 
 export AWS_PROFILE=qml-qec
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="fd --type file"
 export GOPATH="$HOME/go"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/"
 export PYENV_ROOT="$HOME/.pyenv"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
@@ -75,13 +77,14 @@ path=(
   $HOME/.cargo/bin
   $PYENV_ROOT/bin
   $GOPATH/bin
+  /opt/homebrew/opt/llvm/bin
+  /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
   /usr/local/sbin
   /usr/bin
   /usr/sbin
   /bin
   /sbin
-  /Library/TeX/Distributions/Programs/texbin
   $path
 )
 typeset -U path
