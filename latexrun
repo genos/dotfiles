@@ -111,7 +111,7 @@ def main():
         metavar="(no-)CLASS",
         action=ArgParserWarnAction,
         dest="nowarns",
-        default=set(["underfull"]),
+        default={"underfull"},
         help="Enable/disable warning from CLASS, which can be any package name, "
         "LaTeX warning class (e.g., font), bad box type "
         '(underfull, overfull, loose, tight), or "all"',
@@ -251,7 +251,7 @@ def main():
                 output = "output"
         if Message._color:
             terminfo.send("bold", ("setaf", 1))
-        print("{}; {} not updated".format(fstatus, output))
+        print(f"{fstatus}; {output} not updated")
         if Message._color:
             terminfo.send("sgr0")
     sys.exit(status)
@@ -281,11 +281,11 @@ def verbose_cmd(args, cwd=None, env=None):
     if verbose_cmd.enabled:
         cmd = " ".join(map(shlex.quote, args))
         if cwd is not None:
-            cmd = "(cd {} && {})".format(shlex.quote(cwd), cmd)
+            cmd = f"(cd {shlex.quote(cwd)} && {cmd})"
         if env is not None:
             for k, v in env.items():
                 if os.environ.get(k) != v:
-                    cmd = "{}={} {}".format(k, shlex.quote(v), cmd)
+                    cmd = f"{k}={shlex.quote(v)} {cmd}"
         print(cmd, file=sys.stderr)
 
 
@@ -324,7 +324,7 @@ class DB:
             fcntl.lockf(lockfd, fcntl.LOCK_EX, 1)
 
         try:
-            fp = open(filename, "r")
+            fp = open(filename)
         except FileNotFoundError:
             debug("creating new database")
             self.__val = {"version": DB._VERSION}
@@ -385,7 +385,7 @@ class DB:
                     os.unlink(f)
                 else:
                     print(
-                        "warning: {} has changed; not removing".format(f),
+                        f"warning: {f} has changed; not removing",
                         file=sys.stderr,
                     )
         self.__val = {"version": DB._VERSION}
@@ -568,7 +568,7 @@ class Message(collections.namedtuple("Message", "typ filename lineno msg")):
         elif state == "auto":
             cls._color = terminfo.has("setaf", "bold", "sgr0")
         else:
-            raise ValueError("Illegal color state {:r}".format(state))
+            raise ValueError(f"Illegal color state {state:r}")
 
 
 ##################################################################
@@ -663,9 +663,9 @@ class Task:
             fn, args, val = dep
             method = getattr(self, "_input_" + fn, None)
             if method is None:
-                return "unknown dependency method {}".format(fn)
+                return f"unknown dependency method {fn}"
             if method == self._input_unstable or method(*args) != val:
-                return "{}{}".format(fn, tuple(args))
+                return f"{fn}{tuple(args)}"
         return None
 
     def _input(self, name, *args):
@@ -928,7 +928,7 @@ class LaTeX(Task):
     def __feed_terminal(self, stdout):
         prefix = "latex"
         if self.__pass > 1:
-            prefix += " ({})".format(self.__pass)
+            prefix += f" ({self.__pass})"
         with Progress(prefix) as progress:
             buf = []
             filt = LaTeXFilter()
@@ -1033,7 +1033,7 @@ class LaTeX(Task):
                     outputs.add(path)
             else:
                 raise TaskError(
-                    "syntax error on line {} of {}".format(linenum, filename)
+                    f"syntax error on line {linenum} of {filename}"
                 )
         # Ironically, latex omits the .fls file itself
         outputs.add(filename)
@@ -1046,11 +1046,11 @@ class LaTeX(Task):
         # Detect this, create the output directory, and re-run.
         m = re.search("^! I can't write on file `(.*)'\\.$", stdout, re.M)
         if m and m.group(1).find("/") > 0 and "../" not in m.group(1):
-            debug("considering creating output sub-directory for {}".format(m.group(1)))
+            debug(f"considering creating output sub-directory for {m.group(1)}")
             subdir = os.path.dirname(m.group(1))
             newdir = os.path.join(self.__obj_dir, subdir)
             if os.path.isdir(subdir) and not os.path.isdir(newdir):
-                debug("creating output subdirectory {}".format(newdir))
+                debug(f"creating output subdirectory {newdir}")
                 try:
                     mkdir_p(newdir)
                 except OSError as e:
@@ -1066,7 +1066,7 @@ class LaTeX(Task):
             return 0
 
         # Parse the log
-        logfile = open(extra["jobname"] + ".log", "rt", errors="surrogateescape")
+        logfile = open(extra["jobname"] + ".log", errors="surrogateescape")
         for msg in self.__clean_messages(
             LaTeXFilter(self.__nowarns).feed(logfile.read(), True).get_messages()
         ):
@@ -1159,7 +1159,7 @@ class LaTeXCommit(Task):
                 shutil.copy(outname, outname + "~")
                 os.rename(outname + "~", commit)
         except OSError as e:
-            raise TaskError("error committing latex output: {}".format(e)) from e
+            raise TaskError(f"error committing latex output: {e}") from e
         self._input("file", outname)
         self.status = None
         return RunResult([commit], None)
@@ -1305,7 +1305,7 @@ class LaTeXFilter:
             # wrap at 80 columns instead of 79 (LuaTeX #900).
             while self.__lend - self.__lstart >= 80:
                 if self.TRACE:
-                    print("<{}> wrapping".format(self.__pos))
+                    print(f"<{self.__pos}> wrapping")
                 self.__ensure_line()
                 data = data[:-1] + self.__data[self.__pos : self.__lend]
                 self.__pos = self.__lend
@@ -1336,7 +1336,7 @@ class LaTeXFilter:
                 return self.__runaway()
             if lookingatre(r"(Overfull|Underfull|Loose|Tight) \\[hv]box \("):
                 return self.__bad_box()
-            if lookingatre("(Package |Class |LaTeX |pdfTeX )?(\w+ )?warning: ", re.I):
+            if lookingatre(r"(Package |Class |LaTeX |pdfTeX )?(\w+ )?warning: ", re.I):
                 return self.__generic_warning()
             if lookingatre("No file .*\\.tex\\.$", re.M):
                 # This happens with \includes of missing files.  For
@@ -1490,7 +1490,7 @@ class LaTeXFilter:
         stack = []
         while self.__avail:
             m1 = self.__lookingatre(r"<([a-z ]+|\*|read [^ >]*)> |\\.*(->|...)")
-            m2 = self.__lookingatre("l\.[0-9]+ ")
+            m2 = self.__lookingatre(r"l\.[0-9]+ ")
             if m1:
                 found_context = True
                 pre = self.__consume_line().rstrip("\n")
@@ -1590,7 +1590,7 @@ class LaTeXFilter:
             # name, which will start with a \.
             if "hbox" in msg and self.__lookingat("\\"):
                 self.__consume_line(unwrap=True)
-        msg = self.__simplify_message(msg) + " (page {})".format(self.__pageno)
+        msg = self.__simplify_message(msg) + f" (page {self.__pageno})"
         cls = msg.split(None, 1)[0].lower()
         self.__message("warning", lineno, msg, cls=cls)
 
@@ -1661,7 +1661,7 @@ class BibTeX(Task):
         return super().stable()
 
     def __find_bib_cmds(self, basedir, auxname, stack=()):
-        debug("scanning for bib commands in {}".format(auxname))
+        debug(f"scanning for bib commands in {auxname}")
         if auxname in stack:
             raise TaskError(".aux file loop")
         stack = stack + (auxname,)
@@ -1870,7 +1870,7 @@ class BibTeX(Task):
             return 0
 
         # Parse and pretty-print the log
-        log = open(extra["outbase"] + ".blg", "rt").read()
+        log = open(extra["outbase"] + ".blg").read()
         inputs = extra["inputs"]
         for msg in BibTeXFilter(log, inputs).get_messages():
             msg.emit()
@@ -1992,7 +1992,7 @@ class BibTeXFilter:
             return ("warning", None, None, m.group(1))
 
         if match("^.*> ERROR - (.*)$"):
-            m2 = re.match("BibTeX subsystem: (.*?), line (\d+), (.*)$", m.group(1))
+            m2 = re.match(r"BibTeX subsystem: (.*?), line (\d+), (.*)$", m.group(1))
             if m2:
                 return ("error", m2.group(1), m2.group(2), m2.group(3))
             return ("error", None, None, m.group(1))
@@ -2012,7 +2012,7 @@ class BibTeXFilter:
             p = BibTeXKeyParser()
             self.__key_locs = {}
             for filename in self.__inputs:
-                data = open(filename, "rt", errors="surrogateescape").read()
+                data = open(filename, errors="surrogateescape").read()
                 for pkey, lineno in p.parse(data):
                     self.__key_locs.setdefault(pkey, (filename, lineno))
         return self.__key_locs.get(key, (None, None))
@@ -2084,7 +2084,7 @@ class Kpathsea:
         try:
             verbose_cmd(args, cwd, env)
             path = subprocess.check_output(
-                args, cwd=cwd, env=env, universal_newlines=True
+                args, cwd=cwd, env=env, text=True
             ).strip()
         except subprocess.CalledProcessError as e:
             if e.returncode != 1:
