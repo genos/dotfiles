@@ -16,7 +16,6 @@ ocamlinit: .ocamlinit
 passive: bin/passive
 radian: .config/radian/profile
 sbclrc: .sbclrc
-summoner.toml: .summoner.toml
 START_YOUR_DAY: bin/START_YOUR_DAY
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
