@@ -197,8 +197,5 @@ fi
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# rakubrew
-[[ -f $HOME/.rakubrew/bin/rakubrew ]] && eval "$($HOME/.rakubrew/bin/rakubrew init Zsh)"
-
 # zsh syntax highlighting
 [[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
