@@ -4,7 +4,7 @@ function ppprint() { print $1 | lolcat }
 function ppppprint() { print $1 | figlet -f big | lolcat -a }
 
 function repos() {
-  for repo in $HOME/rc/repos/*; do
+  for repo in $HOME/sw/repos/*; do
     if [[ (-d $repo) && (-d $repo/.git) ]] ; then
       ppprint "git pull in ${repo:t}…"
       cd $repo
