@@ -13,7 +13,7 @@
 	ui = auto
 [core]
 	editor = nvim
-	excludesfile = /Users/genos/.gitignore_global
+	excludesfile = /Users/graham/.gitignore_global
 [push]
     default = matching
 [filter "lfs"]
