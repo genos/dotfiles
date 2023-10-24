@@ -1,6 +1,6 @@
 [user]
 	name = Graham Enos
-	email = genos@rigetti.com
+	email = graham@strangeworks.com
 [alias]
 	ci = commit
 	di = diff --color-words

@@ -24,9 +24,9 @@ repository hackage.haskell.org
 -- http-transport:
 -- nix: False
 -- local-no-index-repo:
-remote-repo-cache: /Users/genos/.cabal/packages
--- logs-dir: /Users/genos/.cabal/logs
-world-file: /Users/genos/.cabal/world
+remote-repo-cache: /Users/graham/.cabal/packages
+-- logs-dir: /Users/graham/.cabal/logs
+world-file: /Users/graham/.cabal/world
 -- store-dir:
 -- active-repositories:
 -- verbose: 1
@@ -62,7 +62,7 @@ world-file: /Users/genos/.cabal/world
 -- cid:
 -- extra-lib-dirs:
 -- extra-framework-dirs:
-extra-prog-path: /Users/genos/.cabal/bin
+extra-prog-path: /Users/graham/.cabal/bin
 -- instantiate-with:
 -- tests: False
 -- coverage: False
@@ -100,7 +100,7 @@ extra-prog-path: /Users/genos/.cabal/bin
 -- index-state:
 -- root-cmd:
 -- symlink-bindir:
-build-summary: /Users/genos/.cabal/logs/build.log
+build-summary: /Users/graham/.cabal/logs/build.log
 -- build-log:
 remote-build-reporting: none
 -- report-planning-failure: False
@@ -114,7 +114,7 @@ jobs: $ncpus
 -- package-env:
 -- overwrite-policy:
 -- install-method:
-installdir: /Users/genos/.cabal/bin
+installdir: /Users/graham/.cabal/bin
 -- username:
 -- password:
 -- password-command:
@@ -148,7 +148,7 @@ init
   -- source-dir: src
 
 install-dirs user
-  -- prefix: /Users/genos/.cabal
+  -- prefix: /Users/graham/.cabal
   -- bindir: $prefix/bin
   -- libdir: $prefix/lib
   -- libsubdir: $abi/$libname
