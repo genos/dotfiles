@@ -108,7 +108,6 @@ let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
                     \ 'rust': ['analyzer'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
-                   \ 'bazel': ['buildifier'],
                    \ 'cpp': ['clang-format'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
