@@ -51,7 +51,6 @@ alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
 
-export AWS_PROFILE=qml-qec
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
