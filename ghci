@@ -2,3 +2,4 @@
 :set prompt "\ESC[36mλ⋙ \ESC[m"
 :set +m
 :set +t
+:def hoogle \s -> pure $ ":! hoogle --count=17 \"" <> s <> "\""
