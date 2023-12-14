@@ -59,6 +59,7 @@ export GOPATH="$HOME/go"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8
+export MODULAR_HOME="$HOME/.modular"
 export LC_ALL=en_US.UTF-8
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/"
 export PYENV_ROOT="$HOME/.pyenv"
@@ -74,6 +75,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
+  $MODULAR_HOME/pkg/packages.modular.com_mojo/bin
   $PYENV_ROOT/bin
   $GOPATH/bin
   /opt/homebrew/opt/llvm/bin
