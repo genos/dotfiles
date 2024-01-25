@@ -2,10 +2,6 @@
 set nomodeline
 set modelines=0
 
-if !has('nvim')
-  set nocompatible " be iMproved
-endif
-
 "Plugin time: https://github.com/junegunn/vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -13,7 +9,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
-Plug 'bakpakin/janet.vim'
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
@@ -21,20 +16,16 @@ Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'rhysd/vim-llvm'
-Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
-
-"Turn on stuff
-filetype plugin indent on
-syntax on
 
 "Python provider
 let g:python3_host_prog = 'python3'
@@ -53,33 +44,17 @@ let g:airline_theme="molokai"
 let g:molokai_original = 1
 highlight Comment cterm=italic gui=italic
 
-set laststatus=2               " Always have a status line
 set enc=utf-8                  " Set encoding to utf-8
-set autoindent                 " Each line follows the indentation of the line above
 set showmatch                  " Show matching parenthesis, etc.
-set expandtab                  " Insert spaces instead of tabs
-set tabstop=2                  " Tab length is 2 spaces
-set shiftwidth=2               " Use 2 spaces for << and >> commands
-set smarttab                   " Use shiftwidth instead of tabstop setting
 set number                     " Line numbers
-set ruler                      " Line and column position
-set hlsearch                   " Highlight search match(es)
-set incsearch                  " Incremental search as search is typed
-set nojoinspaces               " Don't include an extra space when joining lines
 set ignorecase                 " Ignore case in searching (unless specified)
 set smartcase                  " Ignore case in searching (unless specified)
-set scrolloff=3                " Don't go off bottom of screen
 set ttyfast                    " Decently fast, since we've got a modern computer
-set wildmenu                   " Tab-complete commands etc.
 set wildmode=longest,full      " Tab-complete commands etc.
-set backspace=indent,eol,start " Backspace all the things
 set mouse=a                    " Use the mouse!?
-set tags=tags;/                " Move up the directory hierarchy until you find a tags file
 set clipboard=unnamed          " Allow vim access to system clipboard
 let mapleader = ","            " Following the leader
 
-"Use shift-tab to unindent
-inoremap <S-Tab> <C-D>
 "Perl/Python regexes instead of Vim's
 nnoremap / /\v
 vnoremap / /\v
@@ -108,7 +83,6 @@ let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
                     \ 'rust': ['analyzer'],
                     \ }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
-                   \ 'cpp': ['clang-format'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['black'],
