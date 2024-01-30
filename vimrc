@@ -16,11 +16,11 @@ Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -46,6 +46,10 @@ highlight Comment cterm=italic gui=italic
 
 set enc=utf-8                  " Set encoding to utf-8
 set showmatch                  " Show matching parenthesis, etc.
+set expandtab                  " Insert spaces instead of tabs
+set tabstop=2                  " Tab length is 2 spaces
+set shiftwidth=2               " Use 2 spaces for << and >> commands
+set smarttab                   " Use shiftwidth instead of tabstop setting
 set number                     " Line numbers
 set ignorecase                 " Ignore case in searching (unless specified)
 set smartcase                  " Ignore case in searching (unless specified)
