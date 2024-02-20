@@ -33,7 +33,7 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias ip='ipython'
 alias ipn='jupyter notebook'
 alias jc='/Applications/j9.6/bin/jconsole'
-alias kc='rlwrap k'
+alias kc="rlwrap $HOME/bin/repl.k"
 alias l='eza --git --header --long'
 alias la='eza --all --git --header --long'
 alias ln='nocorrect ln'
@@ -208,3 +208,7 @@ eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # direnv hook
 eval "$(direnv hook zsh)"
+
+# goog cloud
+[[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+[[ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
