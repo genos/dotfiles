@@ -18,6 +18,7 @@ Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mlochbaum/BQN', {'rtp': 'editors/vim'}
+Plug 'https://codeberg.org/ngn/k', {'rtp': 'vim-k'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
