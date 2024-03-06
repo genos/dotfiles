@@ -93,7 +93,7 @@ let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
-                   \ 'python': ['black'],
+                   \ 'python': ['ruff'],
                    \ 'rust': ['rustfmt'],
                    \ }
 "ALE use virtualenvs
