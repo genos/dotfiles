@@ -46,6 +46,10 @@ alias pjn='poetry run jupyter notebook'
 alias pri='poetry run ipython'
 alias prp='poetry run python'
 alias py='python3'
+alias rjc='rye run jupyter console'
+alias rjn='rye run jupyter notebook'
+alias rri='rye run ipython'
+alias rrp='rye run python'
 alias ssh='TERM=xterm-256color ssh'
 alias touch='nocorrect touch'
 alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
@@ -184,18 +188,21 @@ fi
 # ghcup configuration
 [[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ]] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
+# rye configuration
+[[ -f $HOME/.rye/env ]] && source $HOME/.rye/env
+
 # pyenv configuration
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# rustup configuration
-[[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
-
 # rbenv configuration
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - --no-rehash)"
 fi
+
+# rustup configuration
+[[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
