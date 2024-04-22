@@ -14,6 +14,7 @@ zstyle ':vcs_info:*:*' actionformats '%F{green}%c%f%F{red}%u%f %F{cyan}%b%f%F{ma
 
 alias -g ....='../../..'
 alias -g ...='../..'
+alias apl='/Applications/Dyalog-19.0.app/Contents/Resources/Dyalog/mapl'
 alias cp='nocorrect cp'
 alias e='$EDITOR'
 alias g='git'

@@ -16,10 +16,12 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'guersam/vim-j'
 Plug 'joom/latex-unicoder.vim'
+Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mlochbaum/BQN', {'rtp': 'editors/vim'}
-Plug 'https://codeberg.org/ngn/k', {'rtp': 'vim-k'}
+Plug 'https://codeberg.org/mlochbaum/k', {'rtp': 'vim-k'}
+Plug 'PyGamer0/vim-apl'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -31,8 +33,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
 
-"Python provider
-let g:python3_host_prog = 'python3'
+"Turn off some optional things
+let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
 
 "Explicitly set clipboard (speeds things up by skipping system call)
 let g:clipboard = { 'name': 'pbcopy',
@@ -109,3 +113,9 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
+
+" APL fun: use \ instead of `
+let g:apl_prefix_key = '\'
+
+" Vim-slime
+let g:slime_target = "tmux"
