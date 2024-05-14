@@ -14,7 +14,6 @@ Plug 'https://git.sr.ht/~detegr/nvim-bqn'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'guersam/vim-j'
 Plug 'joom/latex-unicoder.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
