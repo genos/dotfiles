@@ -1,0 +1,9 @@
+[behavior]
+use-uv = true
+global-python = false
+
+[default]
+requires-python = ">= 3.10"
+toolchain = "cpython@3.11"
+dependency-operator = "~="
+use-uv = true
