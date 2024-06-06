@@ -10,7 +10,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'https://git.sr.ht/~detegr/nvim-bqn'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
@@ -18,7 +17,6 @@ Plug 'joom/latex-unicoder.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mlochbaum/BQN', {'rtp': 'editors/vim'}
 Plug 'https://codeberg.org/mlochbaum/k', {'rtp': 'vim-k'}
 Plug 'PyGamer0/vim-apl'
 Plug 'sheerun/vim-polyglot'
