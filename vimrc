@@ -31,7 +31,7 @@ Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
 
 "Python provider
-let g:python3_host_prog='~/.pyenv/versions/3.12.3/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/3.12.4/bin/python'
 "Turn off some optional things
 let g:loaded_node_provider = 0
 let g:loaded_ruby_provider = 0
