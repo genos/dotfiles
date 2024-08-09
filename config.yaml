@@ -14,6 +14,7 @@ nix_conf: .config/nix/nix.conf
 nvim: .config/nvim
 ocamlinit: .ocamlinit
 passive: bin/passive
+qq: bin/qq
 radian: .config/radian/profile
 rye: .rye/config.toml
 sbclrc: .sbclrc
