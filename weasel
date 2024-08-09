@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Find weasel words; modified from
 # http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 
@@ -11,11 +11,11 @@ weasels="many|various|very|fairly|several|extremely\
 wordfile=""
 
 # Check for an alternate weasel file
-if [ -f $HOME/etc/words/weasels ]; then
+if [ -f "$HOME/etc/words/weasels" ]; then
     wordfile="$HOME/etc/words/weasels"
 fi
 
-if [ -f $WORDSDIR/weasels ]; then
+if [ -f "$WORDSDIR/weasels" ]; then
     wordfile="$WORDSDIR/weasels"
 fi
 
@@ -25,17 +25,18 @@ fi
 
 if [ ! "$wordfile" = "" ]; then
     weasels="xyzabc123";
-    for w in `cat $wordfile`; do
-        weasels="$weasels|$w"
-    done
+    while IFS= read -r line
+    do
+        weasels="$weasels|$line"
+    done < "$wordfile"
 fi
 
 
 if [ "$1" = "" ]; then
- echo "usage: `basename $0` <file> ..."
+ echo "usage: $(basename "$0") <file> ..."
  exit
 fi
 
-egrep -i -n --color "\\b($weasels)\\b" $*
+grep -E -i -n --color "\\b($weasels)\\b" "$@"
 
 test $? -eq 1
