@@ -18,7 +18,6 @@ Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://codeberg.org/mlochbaum/k', {'rtp': 'vim-k'}
-Plug 'PyGamer0/vim-apl'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -88,7 +87,6 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
-                    \ 'clojure': ['clj-kondo'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
@@ -112,9 +110,6 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
-
-" APL fun: use \ instead of `
-let g:apl_prefix_key = '\'
 
 " Vim-slime
 let g:slime_target = "tmux"
