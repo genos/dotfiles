@@ -86,7 +86,7 @@ nnoremap <Leader>r :Rg<CR>
 set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
-let g:ale_linters = { 'haskell': ['cabal_ghc', 'hlint', 'hls'],
+let g:ale_linters = { 'haskell': ['hlint', 'hls'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
