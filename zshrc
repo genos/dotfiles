@@ -83,6 +83,7 @@ path=(
   $MODULAR_HOME/pkg/packages.modular.com_mojo/bin
   $PYENV_ROOT/bin
   $GOPATH/bin
+  /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
   /usr/local/sbin
