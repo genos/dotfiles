@@ -14,7 +14,6 @@ zstyle ':vcs_info:*:*' actionformats '%F{green}%c%f%F{red}%u%f %F{cyan}%b%f%F{ma
 
 alias -g ....='../../..'
 alias -g ...='../..'
-alias apl='/Applications/Dyalog-19.0.app/Contents/Resources/Dyalog/mapl'
 alias cp='nocorrect cp'
 alias e='$EDITOR'
 alias g='git'
@@ -61,7 +60,6 @@ bindkey -v  # Selects keymap 'viins' for any operations by the current command, 
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND="fd --type file"
-export GOPATH="$HOME/go"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8
@@ -82,7 +80,6 @@ path=(
   $HOME/.cargo/bin
   $MODULAR_HOME/pkg/packages.modular.com_mojo/bin
   $PYENV_ROOT/bin
-  $GOPATH/bin
   /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
@@ -176,9 +173,9 @@ if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
 fi
 
-# brew install zsh-completions
+# brew install zsh-completions & others
 if command -v brew 1>/dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # fzf for fuzzy file finding
