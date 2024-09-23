@@ -6,7 +6,7 @@ function ppppprint() { print $1 | figlet -f big | lolcat -a }
 function repos() {
   for repo in $HOME/sw/repos/*; do
     if [[ (-d $repo) && (-d $repo/.git) ]] ; then
-      ppprint "git pull in ${repo:t}…"
+      ppprint "git pull in ${repo:t}"
       cd $repo
       git pull --prune
     fi
@@ -14,7 +14,7 @@ function repos() {
 }
 
 function brews() {
-  ppprint "brew update >>= upgrade >>= cask upgrade >>= cleanup…"
+  ppprint "brew update >>= upgrade >>= cask upgrade >>= cleanup"
   cd $HOME
   brew update && brew upgrade --greedy && brew upgrade --cask && brew cleanup
 }
