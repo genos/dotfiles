@@ -30,7 +30,7 @@ Plug 'vlime/vlime', { 'rtp': 'vim/' }
 call plug#end()
 
 "Python provider
-let g:python3_host_prog='~/.pyenv/versions/3.12.5/bin/python'
+let g:python3_host_prog='~/.pyenv/versions/3.12.6/bin/python'
 "Turn off some optional things
 let g:loaded_node_provider = 0
 let g:loaded_ruby_provider = 0
@@ -40,8 +40,7 @@ let g:loaded_perl_provider = 0
 let g:clipboard = { 'name': 'pbcopy',
                   \ 'copy': { '+': 'pbcopy', '*': 'pbcopy' },
                   \ 'paste': {'+': 'pbpaste', '*': 'pbpaste' },
-                  \ 'cache_enabled': 0,
-                  \ }
+                  \ 'cache_enabled': 0, }
 
 "Colors & highlighting
 set termguicolors
@@ -50,6 +49,7 @@ let g:airline_theme="molokai"
 let g:molokai_original = 1
 highlight Comment cterm=italic gui=italic
 
+"Various settings
 set enc=utf-8                  " Set encoding to utf-8
 set showmatch                  " Show matching parenthesis, etc.
 set expandtab                  " Insert spaces instead of tabs
@@ -64,6 +64,7 @@ set wildmode=longest,full      " Tab-complete commands etc.
 set mouse=a                    " Use the mouse!?
 set clipboard=unnamed          " Allow vim access to system clipboard
 let mapleader = ","            " Following the leader
+autocmd FocusLost * :wa        "Save on losing focus, in case we tab away
 
 "Perl/Python regexes instead of Vim's
 nnoremap / /\v
@@ -73,8 +74,6 @@ nnoremap <leader><space> :noh<cr>
 "Jump screenlines, not lines of text
 nnoremap j gj
 nnoremap k gk
-"Save on losing focus, in case we tab away
-au FocusLost * :wa
 
 "fzf speedily
 nnoremap <Leader>f :Files<CR>
@@ -89,16 +88,15 @@ highlight clear SignColumn
 let g:ale_linters = { 'haskell': ['hlint', 'hls'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
-                    \ 'rust': ['analyzer'],
-                    \ }
+                    \ 'rust': ['analyzer'], }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
-                   \ 'rust': ['rustfmt'],
-                   \ }
+                   \ 'rust': ['rustfmt'], }
 "ALE use virtualenvs
 let g:ale_python_auto_poetry = 1
+let g:ale_python_auto_uv = 1
 let g:ale_python_auto_virtualenv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
