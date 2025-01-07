@@ -51,6 +51,7 @@ alias rjn='rye run jupyter notebook'
 alias rri='rye run ipython'
 alias rrp='rye run python'
 alias ssh='TERM=xterm-256color ssh'
+alias tm='tmux -u'
 alias touch='nocorrect touch'
 alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 
