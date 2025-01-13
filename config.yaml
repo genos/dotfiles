@@ -6,6 +6,8 @@ dups: bin/dups
 ghci: .ghci
 gitconfig: .gitconfig
 haskeline: .haskeline
+helix: .config/helix/config.toml
+helix_lang: .config/helix/languages.toml
 inputrc: .inputrc
 latexrun: bin/latexrun
 md2beamer: bin/md2beamer
