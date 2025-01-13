@@ -10,8 +10,8 @@ function fish_right_prompt
     set -g __fish_git_prompt_char_untrackedfiles "?"
 
     # The git prompt's default format is ' (%s)'.
-    # We don't want the leading space.
-    set -l vcs (fish_vcs_prompt '(%s)' 2>/dev/null)
+    # We don't want the leading space (or the parens).
+    set -l vcs (fish_vcs_prompt '%s' 2>/dev/null)
 
     set -q VIRTUAL_ENV_DISABLE_PROMPT
     or set -g VIRTUAL_ENV_DISABLE_PROMPT true
