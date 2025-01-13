@@ -4,6 +4,8 @@ beamer_template.tex: .pandoc/templates/beamer_template.tex
 cabal_config: .cabal/config
 dups: bin/dups
 ghci: .ghci
+fish: .config/fish/config.fish
+functions: .config/fish/functions
 gitconfig: .gitconfig
 haskeline: .haskeline
 helix: .config/helix/config.toml
