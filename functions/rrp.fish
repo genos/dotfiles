@@ -1,3 +1,3 @@
 function rrp
-  rye run python
+    rye run python
 end

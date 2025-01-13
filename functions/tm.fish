@@ -1,3 +1,3 @@
 function tm
-  tmux -u
+    tmux -u
 end

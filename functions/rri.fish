@@ -1,3 +1,3 @@
 function rri
-  rye run ipython
+    rye run ipython
 end
