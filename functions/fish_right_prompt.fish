@@ -1,4 +1,4 @@
-function fish_right_prompt
+function fish_right_prompt -d "Write out the right prompt"
     set -g __fish_git_prompt_showdirtystate 1
     set -g __fish_git_prompt_showuntrackedfiles 1
     set -g __fish_git_prompt_showupstream informative
