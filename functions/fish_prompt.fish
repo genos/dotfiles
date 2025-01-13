@@ -51,5 +51,5 @@ function fish_prompt -d "Write out the prompt"
     # Shorten pwd if prompt is too long
     set -l pwd (prompt_pwd)
 
-    echo -n -s $prompt_host $cwd $pwd $normal $prompt_status "$delim "
+    echo -n -s $prompt_host $cwd $pwd $normal $prompt_status " $delim "
 end
