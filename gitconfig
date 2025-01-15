@@ -2,13 +2,16 @@
 	name = Graham Enos
 	email = graham@strangeworks.com
 [alias]
-	ci = commit
-	di = diff --color-words
-	st = status
+	a = add
+	c = commit
+	d = diff
+	l = pull
+	p = push
 	co = checkout
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 	rom = rebase origin/main
 	romi = rebase -i --autosquash origin/main
-	new = !git init && git symbolic-ref HEAD refs/heads/main
+	st = status
 [color]
 	ui = auto
 [core]
