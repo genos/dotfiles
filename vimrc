@@ -67,7 +67,7 @@ set wildmode=longest,full      " Tab-complete commands etc.
 set mouse=a                    " Use the mouse!?
 set clipboard=unnamed          " Allow vim access to system clipboard
 let mapleader = ","            " Following the leader
-autocmd FocusLost * :wa        "Save on losing focus, in case we tab away
+autocmd FocusLost * :wa        " Save on losing focus, in case we tab away
 
 "Perl/Python regexes instead of Vim's
 nnoremap / /\v

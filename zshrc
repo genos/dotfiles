@@ -1,5 +1,6 @@
 # Initialize colors.
 autoload -U colors && colors
+# VCS & other prompt stuff.
 autoload -Uz vcs_info
 precmd() { vcs_info }
 PROMPT='%F{cyan}%~%f %F{green}∃%f '
@@ -107,11 +108,6 @@ function gi() {
   curl -sL https://www.toptal.com/developers/gitignore/api/$@
 }
 
-function hs() {
-  # Search history with ripgrep
-  history | rg "$*"
-}
-
 function man() {
   # Pretty manpages
   env \
@@ -159,6 +155,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[.
 zstyle ':completion:*' completer _expand _complete _approximate _ignored
 # Kill completion
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+# Completion.
 autoload -Uz compinit
 if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
   compinit
@@ -183,7 +180,7 @@ fi
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
 # ghcup configuration
-[[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ]] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+[[ -f $HOME/.ghcup/env ]] && source $HOME/.ghcup/env
 
 # rye configuration
 [[ -f $HOME/.rye/env ]] && source $HOME/.rye/env
@@ -202,7 +199,7 @@ fi
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 # opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  1> /dev/null 2>&1
 
 # zsh syntax highlighting
 [[ -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -211,7 +208,9 @@ fi
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # direnv hook
-eval "$(direnv hook zsh)"
+if command -v direnv 1>/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
 
 # goog cloud
 [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
