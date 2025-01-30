@@ -80,6 +80,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
+  $MODULAR_HOME/bin
   $MODULAR_HOME/pkg/packages.modular.com_mojo/bin
   $PYENV_ROOT/bin
   /opt/homebrew/opt/llvm/bin
