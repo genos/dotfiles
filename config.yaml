@@ -4,15 +4,14 @@ beamer_template.tex: .pandoc/templates/beamer_template.tex
 cabal_config: .cabal/config
 conf.d: .config/fish/conf.d
 dups: bin/dups
-ghci: .ghci
 fish: .config/fish/config.fish
 functions: .config/fish/functions
+ghci: .ghci
 gitconfig: .gitconfig
 haskeline: .haskeline
 helix: .config/helix/config.toml
 helix_lang: .config/helix/languages.toml
 inputrc: .inputrc
-latexrun: bin/latexrun
 md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
 nix_conf: .config/nix/nix.conf
