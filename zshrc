@@ -54,6 +54,10 @@ alias rrp='rye run python'
 alias ssh='TERM=xterm-256color ssh'
 alias tm='tmux -u'
 alias touch='nocorrect touch'
+alias ujc='uv run jupyter console'
+alias ujn='uv run jupyter notebook'
+alias uri='uv run ipython'
+alias urp='uv run python'
 alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
