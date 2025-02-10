@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-llm -s "Answer in as few words as possible. Use a brief style with short replies." -m llama3.2 "$*"
+llm -s "Answer in as few words as possible. Use a brief style with short replies." -m llama3.3 "$*"
