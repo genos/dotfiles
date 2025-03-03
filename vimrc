@@ -27,8 +27,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vlime/vlime', { 'rtp': 'vim/' }
 call plug#end()
 
@@ -48,7 +46,6 @@ let g:clipboard = { 'name': 'pbcopy',
 "Colors & highlighting
 set termguicolors
 colorscheme molokai
-let g:airline_theme="molokai"
 let g:molokai_original = 1
 highlight Comment cterm=italic gui=italic
 
