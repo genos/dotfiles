@@ -72,6 +72,7 @@ export LANG=en_US.UTF-8
 export MODULAR_HOME="$HOME/.modular"
 export LC_ALL=en_US.UTF-8
 export PYENV_ROOT="$HOME/.pyenv"
+export QHOME="$HOME/q"
 export SAVEHIST=10000
 export SHELL="/usr/local/bin/zsh"
 
