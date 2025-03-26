@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'https://git.sr.ht/~detegr/nvim-bqn'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'janet-lang/janet.vim'
 Plug 'joom/latex-unicoder.vim'
