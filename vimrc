@@ -100,6 +100,7 @@ let g:ale_python_auto_uv = 1
 let g:ale_python_auto_virtualenv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
+set completeopt+=noinsert
 "go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
