@@ -19,9 +19,9 @@ qq: bin/qq
 radian: .config/radian/profile
 rye: .rye/config.toml
 sbclrc: .sbclrc
-START_YOUR_DAY: bin/START_YOUR_DAY
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
+UPDATE_THE_THINGS: bin/UPDATE_THE_THINGS
 vim: .vim
 vimrc: .vimrc
 weasel: bin/weasel
