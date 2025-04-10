@@ -21,7 +21,7 @@ rye: .rye/config.toml
 sbclrc: .sbclrc
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
-UPDATE_THE_THINGS: bin/UPDATE_THE_THINGS
+UPUPANDAWAY: bin/UPUPANDAWAY
 vim: .vim
 vimrc: .vimrc
 weasel: bin/weasel
