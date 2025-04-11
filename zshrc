@@ -28,29 +28,16 @@ alias gl='git pull'
 alias glol='git log --graph --decorate --oneline'
 alias gm='git merge'
 alias gp='git push'
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias gst='git status'
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
-alias ip='ipython'
-alias ipn='jupyter notebook'
 alias jc='/Applications/j9.6/bin/jconsole'
 alias kc="rlwrap $HOME/bin/repl.k"
 alias l='eza --git --header --long'
 alias la='eza --all --git --header --long'
 alias ln='nocorrect ln'
 alias lrt='eza --long --sort=modified'
-alias ls='ls -G'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
-alias pjc='poetry run jupyter console'
-alias pjn='poetry run jupyter notebook'
-alias pri='poetry run ipython'
-alias prp='poetry run python'
-alias py='python3'
-alias rjc='rye run jupyter console'
-alias rjn='rye run jupyter notebook'
-alias rri='rye run ipython'
-alias rrp='rye run python'
 alias ssh='TERM=xterm-256color ssh'
 alias tm='tmux -u'
 alias touch='nocorrect touch'
@@ -65,7 +52,7 @@ bindkey -v  # Selects keymap 'viins' for any operations by the current command, 
 
 export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_COMMAND="fd --type file"
+export FZF_DEFAULT_COMMAND='fd --type file'
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8
@@ -74,7 +61,7 @@ export LC_ALL=en_US.UTF-8
 export PYENV_ROOT="$HOME/.pyenv"
 export QHOME="$HOME/q"
 export SAVEHIST=10000
-export SHELL="/usr/local/bin/zsh"
+export SHELL='/usr/local/bin/zsh'
 
 fpath=(
   $HOME/site-functions
@@ -152,7 +139,7 @@ setopt hist_ignore_dups       # Ignore duplication command history list.
 setopt hist_ignore_space      # Remove command lines from the history list when the first character on the line is a space, or when one of the expanded aliases contains a leading space.
 setopt hist_verify            # Whenever the user enters a line with history expansion, don’t execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 setopt inc_append_history     # Incrementally append history.
-unsetopt share_history        # Don't immediately pick up new commands from other concurrent shells.
+setopt share_history          # Immediately pick up new commands from other concurrent shells.
 setopt no_list_beep           # Disable bell when tab completing.
 
 zstyle ':completion:*' list-colors ''  # Color the completion options.
@@ -191,11 +178,6 @@ fi
 
 # rye configuration
 [[ -f $HOME/.rye/env ]] && source $HOME/.rye/env
-
-# pyenv configuration
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
 
 # rbenv configuration
 if command -v rbenv 1>/dev/null 2>&1; then

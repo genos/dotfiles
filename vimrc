@@ -30,12 +30,11 @@ Plug 'tpope/vim-surround'
 Plug 'vlime/vlime', { 'rtp': 'vim/' }
 call plug#end()
 
-"Python provider
-let g:python3_host_prog='~/.pyenv/versions/3.12.6/bin/python'
 "Turn off some optional things
 let g:loaded_node_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
+let g:loaded_python3_provider = 0
 
 "Explicitly set clipboard (speeds things up by skipping system call)
 let g:clipboard = { 'name': 'pbcopy',
