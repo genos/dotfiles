@@ -139,13 +139,13 @@ haddock
 
 init
   -- interactive: False
-  cabal-version: 3.6
+  cabal-version: 3.8
   license: MIT
   -- tests:
   -- test-dir:
-  -- language: Haskell2010
-  -- application-dir: app
-  -- source-dir: src
+  language: GHC2024
+  application-dir: app
+  source-dir: src
 
 install-dirs user
   -- prefix: /Users/graham/.cabal

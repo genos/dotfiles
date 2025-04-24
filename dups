@@ -2,19 +2,15 @@
 # Finds duplicate adjacent words; modified from
 # http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 
-use Modern::Perl '2022';
+use Modern::Perl '2024';
 use autodie;
-
 if ( !@ARGV ) {
     print "usage: dups <file> ...\n";
     exit;
 }
-
 my $dup_count = 0;
-
 while (1) {
     my $file_name = shift @ARGV;
-
     # Exit code = number of duplicates found.
     exit $dup_count if ( !$file_name );
     open my $handle, '<', $file_name;
@@ -25,22 +21,18 @@ while (1) {
         $line_num++;
         my @words = split(/(\W+)/);
         foreach my $word (@words) {
-
             # Skip spaces
             next if $word =~ /^\s*$/;
-
             # Skip punctuation
             if ( $word =~ /^\W+$/ ) {
                 $last_word = "";
                 next;
             }
-
             # Found a dup?
             if ( lc($word) eq lc($last_word) ) {
                 print "$file_name:$line_num $word\n";
                 $dup_count++;
             }
-
             # Mark this as the last word:
             $last_word = $word;
         }

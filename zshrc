@@ -56,9 +56,7 @@ export FZF_DEFAULT_COMMAND='fd --type file'
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8
-export MODULAR_HOME="$HOME/.modular"
 export LC_ALL=en_US.UTF-8
-export PYENV_ROOT="$HOME/.pyenv"
 export QHOME="$HOME/q"
 export SAVEHIST=10000
 export SHELL='/usr/local/bin/zsh'
@@ -72,10 +70,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
-  $HOME/q/m64
-  $MODULAR_HOME/bin
-  $MODULAR_HOME/pkg/packages.modular.com_mojo/bin
-  $PYENV_ROOT/bin
+  $QHOME/m64
   /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin

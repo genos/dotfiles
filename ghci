@@ -1,4 +1,4 @@
-:set editor /usr/local/bin/nvim
+:set editor /opt/homebrew/bin/nvim
 :set prompt "\ESC[36mλ⋙ \ESC[m"
 :set +m
 :set +t
