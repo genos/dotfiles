@@ -139,7 +139,7 @@ setopt hist_ignore_dups       # Ignore duplication command history list.
 setopt hist_ignore_space      # Remove command lines from the history list when the first character on the line is a space, or when one of the expanded aliases contains a leading space.
 setopt hist_verify            # Whenever the user enters a line with history expansion, don’t execute the line directly; instead, perform history expansion and reload the line into the editing buffer.
 setopt inc_append_history     # Incrementally append history.
-setopt share_history          # Immediately pick up new commands from other concurrent shells.
+unsetopt share_history        # Don't immediately pick up new commands from other concurrent shells.
 setopt no_list_beep           # Disable bell when tab completing.
 
 zstyle ':completion:*' list-colors ''  # Color the completion options.
