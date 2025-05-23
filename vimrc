@@ -93,6 +93,8 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'], }
+"ALE rust format edition
+let g:ale_rust_rustfmt_options = '--edition 2024'
 "ALE use virtualenvs
 let g:ale_python_auto_poetry = 1
 let g:ale_python_auto_uv = 1
