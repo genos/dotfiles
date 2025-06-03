@@ -20,7 +20,7 @@ function brews() {
 }
 
 function rusts() {
-  ppprint "rustup self update >> rustup update"
+  ppprint "rustup update"
   cd $HOME
   rustup update
 }
