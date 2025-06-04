@@ -8,30 +8,6 @@ weasels="many|various|very|fairly|several|extremely\
 |excellent|interestingly|significantly\
 |substantially|clearly|vast|relatively|completely"
 
-wordfile=""
-
-# Check for an alternate weasel file
-if [ -f "$HOME/etc/words/weasels" ]; then
-    wordfile="$HOME/etc/words/weasels"
-fi
-
-if [ -f "$WORDSDIR/weasels" ]; then
-    wordfile="$WORDSDIR/weasels"
-fi
-
-if [ -f words/weasels ]; then
-    wordfile="words/weasels"
-fi
-
-if [ ! "$wordfile" = "" ]; then
-    weasels="xyzabc123";
-    while IFS= read -r line
-    do
-        weasels="$weasels|$line"
-    done < "$wordfile"
-fi
-
-
 if [ "$1" = "" ]; then
  echo "usage: $(basename "$0") <file> ..."
  exit
