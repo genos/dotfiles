@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-function ppprint() { print $1 | lolcat }
-function ppppprint() { print $1 | figlet -f big | lolcat -a }
+function ppprint() { print $1 | lolcrab }
+function ppppprint() { print $1 | figlet -f big | lolcrab -a }
 
 function repos() {
   for repo in $HOME/sw/repos/*; do
