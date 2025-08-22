@@ -44,6 +44,7 @@ alias touch='nocorrect touch'
 alias ujc='uv run jupyter console'
 alias ujn='uv run jupyter notebook'
 alias uri='uv run ipython'
+alias urme='uv run marimo edit'
 alias urp='uv run python'
 alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 
@@ -171,9 +172,6 @@ fi
 # ghcup configuration
 [[ -f $HOME/.ghcup/env ]] && source $HOME/.ghcup/env
 
-# rye configuration
-[[ -f $HOME/.rye/env ]] && source $HOME/.rye/env
-
 # rbenv configuration
 if command -v rbenv 1>/dev/null 2>&1; then
   eval "$(rbenv init - --no-rehash)"
@@ -199,3 +197,8 @@ fi
 # goog cloud
 [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 [[ -f "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc" ]] && source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
