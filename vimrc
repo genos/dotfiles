@@ -81,15 +81,20 @@ nnoremap <Leader>r :Rg<CR>
 set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
-let g:ale_linters = { 'haskell': ['hlint', 'hls'],
+let g:ale_linters = {
+                    \ 'elm': ['elm_ls'],
+                    \ 'haskell': ['hlint', 'hls'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
-                    \ 'rust': ['analyzer'], }
+                    \ 'rust': ['analyzer'],
+                    \ 'typescript': ['deno'], }
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
+                   \ 'elm': ['elm-format'],
                    \ 'haskell': ['fourmolu'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
-                   \ 'rust': ['rustfmt'], }
+                   \ 'rust': ['rustfmt'],
+                    \ 'typescript': ['deno'], }
 "ALE rust format edition
 let g:ale_rust_rustfmt_options = '--edition 2024'
 "ALE use virtualenvs
