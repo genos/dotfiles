@@ -82,6 +82,7 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
+                    \ 'clojure': ['clj-kondo', 'joker'],
                     \ 'elm': ['elm_ls'],
                     \ 'haskell': ['hlint', 'hls'],
                     \ 'ocaml': ['ocamllsp'],
