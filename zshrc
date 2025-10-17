@@ -37,6 +37,7 @@ alias ln='nocorrect ln'
 alias lrt='eza --long --sort=modified'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
+alias q='rlwrap -r q'
 alias ssh='TERM=xterm-256color ssh'
 alias tm='tmux -u'
 alias touch='nocorrect touch'
@@ -57,7 +58,6 @@ export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export QHOME="$HOME/q"
 export SAVEHIST=10000
 export SHELL='/usr/local/bin/zsh'
 
@@ -70,7 +70,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
-  $QHOME/m64
+  $HOME/.kx/bin
   /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
