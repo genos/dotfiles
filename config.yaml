@@ -16,7 +16,6 @@ nvim: .config/nvim
 ocamlinit: .ocamlinit
 passive: bin/passive
 radian: .config/radian/profile
-rye: .rye/config.toml
 sbclrc: .sbclrc
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
