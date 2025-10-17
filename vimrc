@@ -88,14 +88,17 @@ let g:ale_linters = {
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
-                    \ 'typescript': ['deno'], }
+                    \ 'typescript': ['deno'],
+                    \}
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'elm': ['elm-format'],
                    \ 'haskell': ['fourmolu'],
+                   \ 'nix': ['alejandra'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'],
-                    \ 'typescript': ['deno'], }
+                   \ 'typescript': ['deno'],
+                   \}
 "ALE rust format edition
 let g:ale_rust_rustfmt_options = '--edition 2024'
 "ALE use virtualenvs
