@@ -24,7 +24,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vlime/vlime', { 'rtp': 'vim/' }
 call plug#end()
 
 "Turn off some optional things

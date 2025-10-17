@@ -46,7 +46,6 @@ alias ujn='uv run jupyter notebook'
 alias uri='uv run ipython'
 alias urme='uv run marimo edit'
 alias urp='uv run python'
-alias vlime="sbcl --load $HOME/.vim/plugged/vlime/lisp/start-vlime.lisp"
 
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
