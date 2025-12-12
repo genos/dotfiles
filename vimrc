@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
+Plug 'factor/factor.vim'
 Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'jpalardy/vim-slime'
@@ -19,6 +20,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://codeberg.org/ngn/k', { 'rtp': 'vim-k' }
 Plug 'sheerun/vim-polyglot'
+Plug 'tidalcycles/vim-tidal'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'

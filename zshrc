@@ -44,7 +44,7 @@ alias touch='nocorrect touch'
 alias ujc='uv run jupyter console'
 alias ujn='uv run jupyter notebook'
 alias uri='uv run ipython'
-alias urme='uv run marimo edit'
+alias urm='uv run marimo'
 alias urp='uv run python'
 
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
