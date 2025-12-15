@@ -13,7 +13,6 @@ nix_conf: .config/nix/nix.conf
 nvim: .config/nvim
 ocamlinit: .ocamlinit
 passive: bin/passive
-radian: .config/radian/profile
 sbclrc: .sbclrc
 tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
