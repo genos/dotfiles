@@ -1,5 +1,0 @@
-theme = "molokai"
-[keys.normal]
-Z = {Z = ":wq"}
-[keys.insert]
-"C-[" = "normal_mode"
