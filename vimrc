@@ -14,9 +14,11 @@ Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
 Plug 'factor/factor.vim'
 Plug 'godlygeek/tabular'
-Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k' }
+Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'jpalardy/vim-slime'
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
