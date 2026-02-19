@@ -73,7 +73,6 @@ path=(
   /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
-  /usr/local/sbin
   /usr/bin
   /usr/sbin
   /bin
