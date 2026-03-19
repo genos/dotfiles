@@ -61,7 +61,7 @@ export SAVEHIST=10000
 export SHELL='/usr/local/bin/zsh'
 
 fpath=(
-  $HOME/site-functions
+  $HOME/.zfunc
   $fpath
 )
 typeset -U fpath
