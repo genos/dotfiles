@@ -178,7 +178,7 @@ fi
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 # opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh  1> /dev/null 2>&1
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh 1> /dev/null 2>&1
 
 # zsh syntax highlighting
 [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
