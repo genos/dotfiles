@@ -14,7 +14,6 @@ nvim: .config/nvim
 ocamlinit: .ocamlinit
 passive: bin/passive
 sbclrc: .sbclrc
-tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
 UPUPANDAWAY: bin/UPUPANDAWAY
 vim: .vim

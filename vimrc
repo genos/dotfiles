@@ -12,11 +12,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
-Plug 'factor/factor.vim'
 Plug 'godlygeek/tabular'
 Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
-Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -113,6 +111,3 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "run ALEFix
 nmap <silent> <C-h> <Plug>(ale_fix)
-
-" Vim-slime
-let g:slime_target = "tmux"
