@@ -1,1 +1,1 @@
---theme="Monokai Extended Bright"
+--theme=gruvbox-light

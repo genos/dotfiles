@@ -17,8 +17,8 @@ Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
+Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -39,9 +39,9 @@ let g:clipboard = { 'name': 'pbcopy',
 
 "Colors & highlighting
 set termguicolors
-colorscheme molokai
-let g:molokai_original = 1
-highlight Comment cterm=italic gui=italic
+let g:gruvbox_material_background = "hard"
+let g:gruvbox_material_better_performance = 1
+colorscheme gruvbox-material
 
 "Various settings
 set enc=utf-8                  " Set encoding to utf-8
