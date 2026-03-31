@@ -11,13 +11,13 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'ericbn/vim-solarized'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
-Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -39,9 +39,7 @@ let g:clipboard = { 'name': 'pbcopy',
 
 "Colors & highlighting
 set termguicolors
-let g:gruvbox_material_background = "hard"
-let g:gruvbox_material_better_performance = 1
-colorscheme gruvbox-material
+colorscheme solarized
 
 "Various settings
 set enc=utf-8                  " Set encoding to utf-8

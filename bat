@@ -1,1 +1,1 @@
---theme=gruvbox-light
+--theme='Solarized (dark)'
