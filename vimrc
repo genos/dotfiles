@@ -12,12 +12,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ericbn/vim-solarized'
-Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
+Plug 'neogitorg/neogit'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
