@@ -55,7 +55,7 @@ set smartcase                  " Ignore case in searching (unless specified)
 set ttyfast                    " Decently fast, since we've got a modern computer
 set wildmode=longest,full      " Tab-complete commands etc.
 set mouse=a                    " Use the mouse!?
-set clipboard=unnamed          " Allow vim access to system clipboard
+set clipboard=unnamedplus      " Allow vim access to system clipboard
 set completeopt+=noinsert      " Don't insert any text until selected
 let mapleader = ","            " Following the leader
 autocmd FocusLost * :wa        " Save on losing focus, in case we tab away
