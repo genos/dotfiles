@@ -4,6 +4,7 @@ beamer_template.tex: .pandoc/templates/beamer_template.tex
 cabal_config: .cabal/config
 dups: bin/dups
 ghci: .ghci
+ghostty_config: Library/Application Support/com.mitchellh.ghostty/config
 gitconfig: .gitconfig
 haskeline: .haskeline
 inputrc: .inputrc
