@@ -10,10 +10,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
+Plug 'ervandew/supertab'
 Plug 'ericbn/vim-solarized'
 Plug 'godlygeek/tabular'
-Plug 'https://codeberg.org/growler/k', {'rtp': 'vim-k'}
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
