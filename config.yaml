@@ -3,7 +3,6 @@ beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 beamer_template.tex: .pandoc/templates/beamer_template.tex
 dups: bin/dups
 ghci: .ghci
-ghostty_config: Library/Application Support/com.mitchellh.ghostty/config
 gitconfig: .gitconfig
 haskeline: .haskeline
 inputrc: .inputrc
