@@ -12,12 +12,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'ervandew/supertab'
-Plug 'ericbn/vim-solarized'
 Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -39,7 +39,7 @@ let g:clipboard = { 'name': 'pbcopy',
 
 "Colors & highlighting
 set termguicolors
-colorscheme solarized
+colorscheme molokai
 
 "Various settings
 set enc=utf-8                  " Set encoding to utf-8

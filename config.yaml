@@ -1,3 +1,4 @@
+alacritty.toml: .alacritty.toml
 bat: .config/bat/config
 beamer_dark_template.tex: .pandoc/templates/beamer_dark_template.tex
 beamer_template.tex: .pandoc/templates/beamer_template.tex
@@ -8,11 +9,12 @@ haskeline: .haskeline
 inputrc: .inputrc
 md2beamer: bin/md2beamer
 md2tufte: bin/md2tufte
-nix_conf: .config/nix/nix.conf
+nix.conf: .config/nix/nix.conf
 nvim: .config/nvim
 ocamlinit: .ocamlinit
 passive: bin/passive
 sbclrc: .sbclrc
+tmux.conf: .tmux.conf
 tufte_template.tex: .pandoc/templates/tufte_template.tex
 UPUPANDAWAY: bin/UPUPANDAWAY
 vim: .vim
