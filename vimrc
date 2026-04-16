@@ -84,6 +84,7 @@ let g:ale_linters = {
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
+                    \ 'zig': ['zls'],
                     \}
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'clojure': ['clj-fmt'],
