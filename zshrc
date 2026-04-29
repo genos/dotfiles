@@ -169,11 +169,6 @@ fi
 # ghcup configuration
 [[ -f $HOME/.ghcup/env ]] && source $HOME/.ghcup/env
 
-# rbenv configuration
-if command -v rbenv 1>/dev/null 2>&1; then
-  eval "$(rbenv init - --no-rehash)"
-fi
-
 # rustup configuration
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
