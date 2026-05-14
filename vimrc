@@ -84,6 +84,7 @@ let g:ale_linters = {
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
+                    \ 'typescript': ['deno'],
                     \ 'zig': ['zls'],
                     \}
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -93,6 +94,7 @@ let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'],
+                   \ 'typescript': ['deno'],
                    \}
 "ALE rust format edition
 let g:ale_rust_rustfmt_options = '--edition 2024'
