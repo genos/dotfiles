@@ -23,6 +23,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+if !has('nvim')
+  Plug 'rhysd/vim-healthcheck'
+endif
 call plug#end()
 
 "Turn off some optional things
@@ -38,7 +41,11 @@ let g:clipboard = { 'name': 'pbcopy',
                   \ 'cache_enabled': 0, }
 
 "Colors & highlighting
-set termguicolors
+if exists('+termguicolors')  " ViM-Classic in tmux
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 colorscheme molokai
 
 "Various settings
