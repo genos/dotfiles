@@ -11,7 +11,6 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
@@ -23,6 +22,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/VimCompletesMe'
 if !has('nvim')
   Plug 'rhysd/vim-healthcheck'
 endif
