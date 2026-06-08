@@ -50,7 +50,7 @@ alias urp='uv run python'
 bindkey "^X^I" expand-or-complete-prefix # Attempt shell expansion on the current word up to cursor.
 bindkey -v  # Selects keymap 'viins' for any operations by the current command, and also links 'viins' (vi emulation - insert mode) to 'main' so that it is selected by default the next time the editor starts.
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND='fd --type file'
 export HISTSIZE=10000
