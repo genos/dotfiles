@@ -3,7 +3,7 @@ autoload -U colors && colors
 # VCS & other prompt stuff.
 autoload -Uz vcs_info
 precmd() { vcs_info }
-PROMPT='%F{cyan}%~%f %F{green}∃%f '
+PROMPT='%F{cyan}%~%f %F{#af87ff}∃%f '
 setopt prompt_subst  # The prompt string is first subjected to parameter expansion, command substitution and arithmetic expansion.
 RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:*' enable git
