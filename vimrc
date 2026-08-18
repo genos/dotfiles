@@ -53,8 +53,6 @@ set enc=utf-8                  " Set encoding to utf-8
 set nowrap                     " Don't wrap text
 set showmatch                  " Show matching parenthesis, etc.
 set expandtab                  " Insert spaces instead of tabs
-set tabstop=2                  " Tab length is 2 spaces
-set shiftwidth=2               " Use 2 spaces for << and >> commands
 set number                     " Line numbers
 set ignorecase                 " Ignore case in searching (unless specified)
 set smartcase                  " Ignore case in searching (unless specified)
