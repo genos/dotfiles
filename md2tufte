@@ -12,7 +12,7 @@ def typeset(path: pathlib.Path) -> None:
     output = path.with_suffix(".pdf")
     subprocess.call(
         shlex.split(
-            f"pandoc -t latex+smart --pdf-engine=xelatex --template=tufte_template.tex --listings {path} -o {output}"
+            f"pandoc -t latex+smart --pdf-engine=xelatex --template=tufte_template.tex --syntax-highlighting=idiomatic {path} -o {output}"
         )
     )
 

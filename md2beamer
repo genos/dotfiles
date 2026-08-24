@@ -12,7 +12,7 @@ def typeset(path: pathlib.Path, dark: bool) -> None:
     template = "beamer_dark_template.tex" if dark else "beamer_template.tex"
     output = path.with_suffix(".pdf")
     subprocess.call(
-        shlex.split(f"pandoc -t beamer+smart --pdf-engine=xelatex --template={template} --listings {path} -o {output}")
+        shlex.split(f"pandoc -t beamer+smart --pdf-engine=xelatex --template={template} --syntax-highlighting=idiomatic {path} -o {output}")
     )
 
 
