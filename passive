@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/binbin/env bash
 # Find instances of passive voice; modified from
 # http://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 

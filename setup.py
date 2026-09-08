@@ -2,8 +2,8 @@
 """Install my dotfiles"""
 
 import os
-from pathlib import Path
 import sys
+from pathlib import Path
 
 DOTFILES = Path(__file__).parent
 CONFIG = DOTFILES / "config.yaml"
@@ -18,5 +18,4 @@ for line in CONFIG.read_text().strip().split("\n"):
     except FileExistsError:
         print(f"{symlink} already exists; did you clean up before?")
         sys.exit(1)
-else:
-    print("Done!")
+print("Done!")
