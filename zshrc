@@ -29,8 +29,6 @@ alias glol='git log --graph --decorate --oneline'
 alias gm='git merge'
 alias gp='git push'
 alias gst='git status'
-alias jc="$HOME/j9.7/bin/jconsole"
-alias kc="rlwrap $HOME/bin/repl.k"
 alias l='eza --git --header --long'
 alias la='eza --all --git --header --long'
 alias ln='nocorrect ln'
@@ -69,8 +67,6 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
-  $HOME/.kx/bin
-  /opt/homebrew/opt/llvm/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
   /usr/bin
@@ -172,22 +168,10 @@ fi
 # rustup configuration
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
-# opam configuration
-[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh 1> /dev/null 2>&1
-
 # zsh syntax highlighting
 [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# perl configuration
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # direnv hook
 if command -v direnv 1>/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
