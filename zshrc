@@ -147,7 +147,7 @@ else
 fi
 
 # homebrew
-[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -f $(brew --prefix)/bin/brew ]] && eval "$($(brew --prefix)/bin/brew shellenv)"
 
 # zoxide for moving around
 if command -v zoxide 1>/dev/null 2>&1; then
@@ -156,7 +156,7 @@ fi
 
 # brew install zsh-completions & others
 if command -v brew 1>/dev/null 2>&1; then
-  FPATH=/opt/homebrew/share/zsh-completions:/opt/homebrew/share/zsh/site-functions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # fzf for fuzzy file finding
@@ -169,7 +169,7 @@ fi
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
 # zsh syntax highlighting
-[[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[[ -f $(brew --prefix)/bin/zsh-patina ]] && eval "$($(brew --prefix)/bin/zsh-patina activate)"
 
 # direnv hook
 if command -v direnv 1>/dev/null 2>&1; then
