@@ -1,2 +1,3 @@
-theme = Molokai
+copy-on-select = false
 font-family = Triplicate A Code
+theme = Molokai
