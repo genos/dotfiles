@@ -66,6 +66,7 @@ path=(
   $HOME/bin
   $HOME/.local/bin
   $HOME/.cargo/bin
+  /opt/homebrew/bin
   /Library/TeX/Distributions/Programs/texbin
   /usr/local/bin
   /usr/bin
