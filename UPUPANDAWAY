@@ -32,4 +32,4 @@ function haskells() {
   cabal update
 }
 
-repos; brews; rusts; haskells; ppppprint "DONE!"
+brews; rusts; haskells; ppppprint "DONE!"
