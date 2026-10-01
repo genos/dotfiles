@@ -53,6 +53,7 @@ set nowrap                     " Don't wrap text
 set showmatch                  " Show matching parenthesis, etc.
 set expandtab                  " Insert spaces instead of tabs
 set number                     " Line numbers
+set hlsearch                   " Highlight search match(es)
 set ignorecase                 " Ignore case in searching (unless specified)
 set smartcase                  " Ignore case in searching (unless specified)
 set ttyfast                    " Decently fast, since we've got a modern computer
@@ -60,6 +61,7 @@ set wildmode=longest,full      " Tab-complete commands etc.
 set mouse=a                    " Use the mouse!?
 set clipboard=unnamed          " Allow vim access to system clipboard
 set completeopt+=noinsert      " Don't insert any text until selected
+set autoread                   " Automatically read files changed outside of vim
 let mapleader = ","            " Following the leader
 autocmd FocusLost * :wa        " Save on losing focus, in case we tab away
 
@@ -101,6 +103,9 @@ let g:ale_rust_rustfmt_options = '--edition 2024'
 let g:ale_python_auto_uv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
+"hover info
+nnoremap K :ALEHover<CR>
+let g:ale_floating_preview = 1
 "go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
