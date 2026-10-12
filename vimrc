@@ -86,6 +86,7 @@ highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
                     \ 'haskell': ['hlint', 'hls'],
+                    \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
                     \ 'typescript': ['deno'],
@@ -93,6 +94,7 @@ let g:ale_linters = {
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
                    \ 'haskell': ['fourmolu'],
                    \ 'nix': ['alejandra'],
+                   \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'],
                    \ 'typescript': ['deno'],

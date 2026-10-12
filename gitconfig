@@ -14,7 +14,7 @@
 [color]
 	ui = auto
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /Users/graham/.gitignore_global
 [push]
     default = matching
