@@ -165,6 +165,9 @@ fi
 # ghcup configuration
 [[ -f $HOME/.ghcup/env ]] && source $HOME/.ghcup/env
 
+# opam configuration
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh 1> /dev/null 2>&1
+
 # rustup configuration
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 
