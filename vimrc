@@ -86,18 +86,20 @@ highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
                     \ 'haskell': ['hlint', 'hls'],
+                    \ 'javascript': ['biome'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
-                    \ 'typescript': ['deno'],
+                    \ 'typescript': ['biome'],
                     \}
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
-                   \ 'haskell': ['fourmolu'],
+                   \ 'haskell': ['ormolu'],
+                   \ 'javascript': ['biome'],
                    \ 'nix': ['alejandra'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'],
-                   \ 'typescript': ['deno'],
+                   \ 'typescript': ['biome'],
                    \}
 "ALE rust format edition
 let g:ale_rust_rustfmt_options = '--edition 2024'
