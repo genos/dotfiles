@@ -107,9 +107,11 @@ let g:ale_rust_rustfmt_options = '--edition 2024'
 let g:ale_python_auto_uv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
-"hover info
-nnoremap K :ALEHover<CR>
-let g:ale_floating_preview = 1
+"hover info in regular vim
+if !has('nvim')
+  nnoremap K :ALEHover<CR>
+  let g:ale_floating_preview = 1
+endif
 "go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
