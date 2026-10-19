@@ -140,7 +140,8 @@ zstyle ':completion:*' completer _expand _complete _approximate _ignored
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 # Completion.
 autoload -Uz compinit
-if [[  (-e $HOME/.zcompdump) && ($(date +'%j') != $(stat -f '%Sm' -t '%j' $HOME/.zcompdump)) ]]; then
+if [[ -e $HOME/.zcompdump ]] && [[ -n $(find $HOME/.zcompdump -mtime +1) ]]; then
+  rm -f $HOME/.zcompdump
   compinit
 else
   compinit -C
@@ -167,6 +168,9 @@ fi
 
 # opam configuration
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source $HOME/.opam/opam-init/init.zsh 1> /dev/null 2>&1
+
+# perl configuration
+[[ -d $HOME/perl5/lib/perl5 ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # rustup configuration
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
