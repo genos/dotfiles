@@ -1,3 +1,2 @@
-:set editor nvim
 :set prompt "\ESC[36mλ⋙ \ESC[m"
 :def hoogle \s -> pure $ ":! hoogle --count=17 \"" <> s <> "\""

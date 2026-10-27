@@ -85,21 +85,27 @@ set signcolumn=yes
 highlight clear SignColumn
 "ALE linters & fixers
 let g:ale_linters = {
+                    \ 'elm': ['elm_ls'],
                     \ 'haskell': ['hlint', 'hls'],
                     \ 'javascript': ['biome'],
+                    \ 'javascriptreact': ['biome'],
                     \ 'ocaml': ['ocamllsp'],
                     \ 'python': ['pyright', 'ruff'],
                     \ 'rust': ['analyzer'],
-                    \ 'typescript': ['biome'],
+                    \ 'typescript': ['tsserver'],
+                    \ 'typescriptreact': ['tsserver'],
                     \}
 let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'],
+                   \ 'elm': ['elm-format'],
                    \ 'haskell': ['ormolu'],
                    \ 'javascript': ['biome'],
+                   \ 'javascriptreact': ['biome'],
                    \ 'nix': ['alejandra'],
                    \ 'ocaml': ['ocamlformat'],
                    \ 'python': ['ruff', 'ruff_format'],
                    \ 'rust': ['rustfmt'],
                    \ 'typescript': ['biome'],
+                   \ 'typescriptreact': ['biome'],
                    \}
 "ALE rust format edition
 let g:ale_rust_rustfmt_options = '--edition 2024'
@@ -107,11 +113,9 @@ let g:ale_rust_rustfmt_options = '--edition 2024'
 let g:ale_python_auto_uv = 1
 "ALE autocomplete
 let g:ale_completion_enabled = 1
-"hover info in regular vim
-if !has('nvim')
-  nnoremap K :ALEHover<CR>
-  let g:ale_floating_preview = 1
-endif
+"hover info
+nnoremap K :ALEHover<CR>
+let g:ale_floating_preview = 1
 "go to definitions
 nnoremap <leader>d :ALEGoToDefinition<CR>
 nnoremap <leader>t :ALEGoToTypeDefinition<CR>
