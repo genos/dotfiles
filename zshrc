@@ -50,6 +50,7 @@ bindkey -v  # Selects keymap 'viins' for any operations by the current command, 
 export EDITOR='vim'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_COMMAND='fd --type file'
+export GPG_TTY="$(tty)"
 export HISTSIZE=10000
 export KEYTIMEOUT=1
 export LANG=en_US.UTF-8

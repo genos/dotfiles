@@ -1,6 +1,7 @@
 [user]
 	name = Graham Enos
 	email = graham.enos@ionq.co
+	signingkey = 3A92FF6E52B6D9C4
 [alias]
 	a = add
 	c = commit
@@ -26,3 +27,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
